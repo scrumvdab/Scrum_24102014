@@ -1,0 +1,3 @@
+@media (max-width: 768px) {#video{display:none;
+                           border: 20px solid red;
+                           }
