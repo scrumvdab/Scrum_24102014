@@ -1,5 +1,9 @@
 <?php
 
+$html = 'test';
+$string = 'testtest';
+$pdf = 'test';
+
 Route::get('/', [
     'as' => 'home',
     'uses' => 'HomeController@index'
@@ -49,64 +53,48 @@ Route::get('links', [
 Route::controller('users', 'UsersController');
 
 // active link
-HTML::macro('clever_link', function($route, $text) {	
-	if( Request::path() == $route ) {
-		$active = "class = 'active'";
-	}
-	else {
-		$active = '';
-	}
- 
-  return '<li ' . $active . '>' . link_to($route, $text) . '</li>';
+HTML::macro('clever_link', function($route, $text) {
+    if (Request::path() == $route) {
+        $active = "class = 'active'";
+    } else {
+        $active = '';
+    }
+
+    return '<li ' . $active . '>' . link_to($route, $text) . '</li>';
 });
 
-//CreatePdf
-//Show a PDF
-/*Route::get('pdf', function() {
-    $html = '<html><body>'
-            . '<p>Test</p>'
-            . '</body></html>';
-    return PDF::load($html, 'A4', 'portrait')->show();
+Route::get('PDF', function() {
+    $pdf = View::make('PDF');
+    $pdf->render();
+    return PDF::load($pdf, 'A4', 'portrait')->show();
+    
 });
-//Download a PDF
-Route::get('/', function() {
-    $html = '<html><body>'
-            . '<p>Put your html here, or generate it with your favourite '
-            . 'templating system.</p>'
-            . '</body></html>';
-    return PDF::load($html, 'A4', 'portrait')->download('my_pdf');
+
+Route::get('/', array('uses' => 'ForumController@index', 'as' => 'forum'));
+
+Route::group(array('prefix' => '/forum'), function() {
+    Route::get('/', array('uses' => 'ForumController@index', 'as' => 'forum-home'));
+    Route::get('/category/{id}', array('uses' => 'ForumController@category', 'as' => 'forum-category'));
+    Route::get('/thread/{id}', array('uses' => 'ForumController@thread', 'as' => 'forum-thread'));
+
+    /* 'admin' ipv 'auth' 16/10/2014 */
+
+    Route::group(array('before' => 'admin'), function() {
+        Route::get('/group/{id}/delete', array('uses' => 'ForumController@deleteGroup', 'as' => 'forum-delete-group'));
+        Route::group(array('before' => 'csrf'), function() {
+            Route::post('/group', array('uses' => 'ForumController@storeGroup', 'as' => 'forum-store-group'));
+        }
+        );
+    }
+    );
 });
-//Returns a PDF as a string
-Route::get('/', function() {
-    $html = '<html><body>'
-            . '<p>Put your html here, or generate it with your favourite '
-            . 'templating system.</p>'
-            . '</body></html>';
-    $pdf = PDF::load($html, 'A4', 'portrait')->output();
+
+
+Route::group(array('before' => 'guest'), function() {
+    Route::get('/user/create', array('uses' => 'ForumUserController@getCreate', 'as' => 'getCreate'));
+    Route::get('/user/login', array('uses' => 'ForumUserController@getLogin', 'as' => 'getLogin'));
+    Route::group(array('before' => 'csrf'), function() {
+        Route::post('/user/create', array('uses' => 'ForumUserController@postCreate', 'as' => 'postCreate'));
+        Route::post('/user/login', array('uses' => 'ForumUserController@postLogin', 'as' => 'postLogin'));
+    });
 });
-//Multiple PDFs
-for ($i = 1; $i <= 2; $i++) {
-    $pdf = new \Thujohn\Pdf\Pdf();
-    $content = $pdf->load(View::make('pdf.image'))->output();
-    File::put(public_path('test' . $i . '.pdf'), $content);
-}
-PDF::clear();
-//Examples
-//Save the PDF to a file in a specific folder, and then mail it as attachement. By @w0rldart
-
-define('BUDGETS_DIR', public_path('uploads/budgets')); // I define this in a constants.php file
-
-if (!is_dir(BUDGETS_DIR)) {
-    mkdir(BUDGETS_DIR, 0755, true);
-}
-
-$outputName = str_random(10); // str_random is a [Laravel helper](http://laravel.com/docs/helpers#strings)
-$pdfPath = BUDGETS_DIR . '/' . $outputName . '.pdf';
-File::put($pdfPath, PDF::load($view, 'A4', 'portrait')->output());
-
-Mail::send('emails.pdf', $data, function($message) use ($pdfPath) {
-    $message->from('us@example.com', 'Laravel');
-    $message->to('you@example.com');
-    $message->attach($pdfPath);
-});
-*/

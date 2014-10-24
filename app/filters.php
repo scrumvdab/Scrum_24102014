@@ -30,16 +30,16 @@ App::after(function($request, $response) {
   | integrates HTTP Basic authentication for quick, simple checking.
   |
  */
-
-/* Route::filter('auth', function() {
-  if (Auth::guest()) {
-  if (Request::ajax()) {
-  return Response::make('Unauthorized', 401);
-  } else {
-  return Redirect::guest('login');
-  }
-  }
-  }); */
+/* Waarom zette je hetgeen hieronder in commentaar? */
+Route::filter('auth', function() {
+    if (Auth::guest()) {
+        if (Request::ajax()) {
+            return Response::make('Unauthorized', 401);
+        } else {
+            return Redirect::guest('login');
+        }
+    }
+}); 
 Route::filter('auth', function() {
     if (Auth::guest())
         return Redirect::guest('users/login');
@@ -48,6 +48,31 @@ Route::filter('auth', function() {
 Route::filter('auth.basic', function() {
     return Auth::basic();
 });
+
+/* je mag deze filter afzetten (opm. dd 16/10/2014), maar dan voegt hij bij mij geen groep toe in de database */
+
+Route::filter('auth', function() {
+    if (Auth::guest()) {
+        if (Request::ajax()) {
+            return Response::make('Unauthorized', 401);
+        } else {
+            return Redirect::guest('login');
+        }
+    }
+});
+/* toegevoegde code voor delete group 16/10/2014 */
+Route::filter('admin', function() {
+    if (!(Auth::check() && Auth::user()->isAdmin())) { 
+            
+        return Redirect::route('home');
+            
+        }
+    
+});
+
+
+
+
 
 /*
   |--------------------------------------------------------------------------

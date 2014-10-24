@@ -1,0 +1,25 @@
+stap 1: installeer laravel framework in map laravel onder map htdocs
+
+=> ../htdocs/composer create laravel/laravel scrum --prefer-dist
+
+stap 2: toon de eigenschappen van je framework
+
+=> ../htdocs/project laravel/php -v 
+
+stap 3: maak database scrum aan in localhost
+
+stap 4: maak migration files aan 
+
+=> ../htdocs/project laravel/php artisan migrate:make create_users_table
+=> ../htdocs/project laravel/php artisan migrate:make create_forum_groups_table
+=> ../htdocs/project laravel/php artisan migrate:make create_forum_categories_table
+=> ../htdocs/project laravel/php artisan migrate:make create_forum_threads_table
+=> ../htdocs/project laravel/php artisan migrate:make create_forum_comments_table
+
+stap 5: maak de tabellen en hun attributen in de database aan volgens de migrations files
+
+=> ../htdocs/project laravel/php artisan migrate
+
+stap 4: voeg de waarden uit de seeders toe aan de aangemaakte tabellen (verwijdert de oorspronkelijke waarden)
+
+=> ../htdocs/project laravel/php artisan db:seed

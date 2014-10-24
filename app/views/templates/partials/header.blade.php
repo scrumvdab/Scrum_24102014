@@ -62,11 +62,12 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
                         </button>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li>{{ HTML::clever_link("Home", 'Home' ) }}</li>
+                            <li>{{ HTML::clever_link("home", 'home' ) }}</li>
                             <li>{{ HTML::clever_link("activiteiten", 'activiteiten' ) }}</li>
                             <li>{{ HTML::clever_link("contact", 'contact' ) }}</li>
                             <li>{{ HTML::clever_link("leden", 'leden' ) }}</li>
@@ -74,6 +75,7 @@
                             <li>{{ HTML::clever_link("forum", 'forum' ) }}</li>
                             <li>{{ HTML::clever_link("giften", 'giften' ) }}</li>
                             <li>{{ HTML::clever_link("links", 'links' ) }}</li>
+                            <li>{{ HTML::clever_link("PDF", 'PDF' ) }}</li>
                         </ul>
                     </div> 
                 </nav>

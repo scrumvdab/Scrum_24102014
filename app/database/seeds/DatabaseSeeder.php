@@ -13,5 +13,12 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('UserTableSeeder');
 	}
+        // seeder database Forum
+       // public function run()
+	//{
+	//	Eloquent::unguard();
+//
+//		$this->call('ForumTableSeeder');
+//	}
 
 }

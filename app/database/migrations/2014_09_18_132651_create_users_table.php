@@ -25,8 +25,9 @@ class CreateUsersTable extends Migration {
             $table->boolean('news');
             $table->boolean('news_extra');
             $table->string('banknr', 100);
+            $table->string('remember_token');
             $table->timestamps();
-            $table->rememberToken();
+            
         });
     }
 
