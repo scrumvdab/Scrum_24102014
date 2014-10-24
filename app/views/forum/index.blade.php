@@ -1,26 +1,27 @@
 @extends ('layouts.master')
 
 @section('head')
-
+@parent
+<title>Forums</title>
 @stop
 
 @section('content')
 @if (Auth::check() && Auth::user()->isAdmin())
-<div>
-    <!-- group_form want het betreft een id -->
-    <a href="#" class="btn btn-default" data-toggle="modal" data-target="#group_form">Voeg groep toe</a>
-</div>
+<a href="#" class="btn btn-default" data-toggle="modal" data-target="#group_form">Voeg groep toe</a>
 @endif
 
 @foreach($groups as $group)
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <!--toegevoegde div voor delete group 16/10/2014 -->
+        @if(Auth::check() && Auth::user()->isAdmin())
         <div class="clearfix">
             <h3 class="panel-title pull-left">{{ $group->title }}</h3>
+            <a href="#" id="add-category-{{ $group->id}}" data-toggle="modal" data-target="#category_modal" class="btn btn-success btn-xs pull-right new_category">Nieuwe categorie</a>
             <a href="#" id="{{ $group->id}}" data-toggle="modal" data-target="#group_delete" class="btn btn-danger btn-xs pull-right delete_group">Verwijder</a>
         </div>
-        <!-- einde div -->
+        @else
+        <h3 class="panel-title">{{ $group->title }}</h3>
+        @endif
     </div>
     <div class="panel-body panel-list-group">
         <div class="list-group">
@@ -67,6 +68,38 @@
         </div>
     </div>
 </div>
+<!-- 24/10/2014 nieuwe categorie -->
+<div class="modal fade" id="category_modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">Nieuwe categorie</h4>
+            </div>
+            <div class="modal-body">
+                <form id="category_form" method="post">
+                    <div class="form-group{{ ($errors->has('category_name')) ? ' has-error' : ''}}">
+                        <label for="category_name">Naam categorie:</label>
+                        <input type="text" id="category_name" name="category_name" class="form-control"> 
+                    </div>
+                    @if($errors->has('category_name'))
+                    <p>{{$errors->first('category_name')}}</p>
+                    @endif
+
+                    {{Form::token()}}
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="category_submit">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- code voor bevestiging delete 16/10/2014 -->
 <div class="modal fade" id="group_delete" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -80,10 +113,11 @@
             </div>
             <div class="modal-body">
                 <h3> Ben je zeker dat je deze groep wenst te verwijderen?</h3>
+
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Annuleer</button>
-                <a href="#" type="button" class="btn btn-primary" id="btn_delete_group">Verwijder</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Maak ongedaan</button>
+                <a href="" type="button" class="btn btn-primary" id="btn_delete_group">Verwijder</a>
             </div>
         </div>
     </div>
@@ -96,14 +130,22 @@
 
 @section('javascript')
 @parent
-{{ HTML::script('bootstrap/js/forumjs.js') }} 
+<script type="text/javascript" src="bootstrap/js/forumjs.js">
+</script>
 @if(Session::has('modal'))
 <script type="text/javascript">
-$("{{Session::get('modal')}}").modal('show');
+    $("{{Session::get('modal')}}").modal('show');
 </script>
 @endif
 
+@if(Session::has('category-modal') && Session::has('group-id'))
+<script type="text/javascript">
+    $("#category_form").prop('action', "forum/category/{{ Session::get('group-id') }}/new");
+    $("{{Session::get('category-modal')}}").modal('show');
+</script>
+@endif
 @stop
+
 
 
 

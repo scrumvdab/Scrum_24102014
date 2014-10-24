@@ -1,16 +1,13 @@
 <?php
 
 class ForumCategory extends Eloquent {
+
     protected $table = 'forum_categories';
-    public function group()
-    {
-        $this->belongsTo('group');
-    }
-    /*
+
     public function categories() {
         $this->belongsTo('ForumGroup');
     }
-    */
+    
     public function threads() {
         return $this->hasMany('ForumThread', 'category_id');
     }

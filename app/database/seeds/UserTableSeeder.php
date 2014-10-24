@@ -98,7 +98,7 @@ class UserTableSeeder extends Seeder {
         ForumThread::create(array(
             'group_id' => 1,
             'category_id' => 1,
-            'thread_id' => 2,
+            'thread_id' => 1,
             'body' => 'Hallo',
             'author_id' => 1
         ));
@@ -112,7 +112,7 @@ class UserTableSeeder extends Seeder {
             'group_id' => 1,
             'body' => 'Hallo2',
             'author_id' => 1,
-            'category_id' => 2
+            'category_id' => 1
         ));
 
         ForumGroup::create(array(

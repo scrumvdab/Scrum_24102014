@@ -67,8 +67,13 @@ Route::get('PDF', function() {
     $pdf = View::make('PDF');
     $pdf->render();
     return PDF::load($pdf, 'A4', 'portrait')->show();
+});
+
+/*
+Route::get('BBCode', function() {
     
 });
+*/
 
 Route::get('/', array('uses' => 'ForumController@index', 'as' => 'forum'));
 
@@ -80,21 +85,36 @@ Route::group(array('prefix' => '/forum'), function() {
     /* 'admin' ipv 'auth' 16/10/2014 */
 
     Route::group(array('before' => 'admin'), function() {
+
         Route::get('/group/{id}/delete', array('uses' => 'ForumController@deleteGroup', 'as' => 'forum-delete-group'));
+        Route::get('/category/{id}/delete', array('uses' => 'ForumController@deleteCategory', 'as' => 'forum-delete-category'));
+        
         Route::group(array('before' => 'csrf'), function() {
+            Route::post('category/{id}/new', array('uses' => 'ForumController@storeCategory', 'as' => 'forum-store-category'));
             Route::post('/group', array('uses' => 'ForumController@storeGroup', 'as' => 'forum-store-group'));
         }
         );
     }
     );
-});
+    Route::group(array('before' => 'auth'), function() {
 
+        Route::get('/thread/{id}/new', array('uses' => 'ForumController@newThread', 'as' => 'forum-get-new-thread'));
 
-Route::group(array('before' => 'guest'), function() {
-    Route::get('/user/create', array('uses' => 'ForumUserController@getCreate', 'as' => 'getCreate'));
-    Route::get('/user/login', array('uses' => 'ForumUserController@getLogin', 'as' => 'getLogin'));
-    Route::group(array('before' => 'csrf'), function() {
-        Route::post('/user/create', array('uses' => 'ForumUserController@postCreate', 'as' => 'postCreate'));
-        Route::post('/user/login', array('uses' => 'ForumUserController@postLogin', 'as' => 'postLogin'));
+        Route::group(array('before' => 'csrf'), function() {
+
+            Route::post('/thread/{id}/new', array('uses' => 'ForumController@storeThread', 'as' => 'forum-store-thread'));
+        });
     });
-});
+
+
+    Route::group(array('before' => 'guest'), function() {
+        Route::get('/user/create', array('uses' => 'ForumUserController@getCreate', 'as' => 'getCreate'));
+        Route::get('/user/login', array('uses' => 'ForumUserController@getLogin', 'as' => 'getLogin'));
+        Route::group(array('before' => 'csrf'), function() {
+            Route::post('/user/create', array('uses' => 'ForumUserController@postCreate', 'as' => 'postCreate'));
+            Route::post('/user/login', array('uses' => 'ForumUserController@postLogin', 'as' => 'postLogin'));
+        });
+    });
+}
+);
+
