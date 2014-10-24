@@ -108,6 +108,7 @@ return array(
         'Illuminate\Workbench\WorkbenchServiceProvider',
         'Zizaco\Confide\ServiceProvider',
         'Thujohn\Pdf\PdfServiceProvider',
+
     ),
     /*
       |--------------------------------------------------------------------------

@@ -12,6 +12,7 @@
         </ul>
         {{ Form::text('firstname', null, array('class'=>'input-block-level', 'placeholder'=>'Voornaam')) }}<br>
         {{ Form::text('lastname', null, array('class'=>'input-block-level', 'placeholder'=>'Naam')) }}<br>
+        {{ Form::text('username', null, array('class'=>'input-block-level', 'placeholder'=>'username')) }}<br>
         {{ Form::text('email', null, array('class'=>'input-block-level', 'placeholder'=>'E-mail')) }}<br>
         {{ Form::password('password', array('class'=>'input-block-level', 'placeholder'=>'Wachtwoord ')) }}<br>
         {{ Form::password('password_confirmation', array('class'=>'input-block-level', 'placeholder'=>'Wachtwoord bevestigen')) }}<br>

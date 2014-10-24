@@ -2,9 +2,12 @@
 
 /****algemeen****/
 
-section #intro, body{background-color:#402502;}
+section #intro, body{
+    /*background-color: #015965;*/ /*donker achtergrond kleur */
+    background-color: #03899C; /*lichter achtergrond kleur */
+}
 
-body{color: #FFF;
+body{color: #000000;
      margin: 0;
      padding: 0;}
 
@@ -13,15 +16,14 @@ body{color: #FFF;
 /******************************************************************************/
 
 /* header en alles daarrond */
-header, header #header, #header .container{ background-color: #402502;
-                                            padding: 0;
-                                            border: 1px solid;
-                                            border-color: #402502;
+header, header #header, #header .container{ background-color: #015965; /* donker achtergrondkleur */
+                                            /*background-color: #03899C;*/ /*lichter achtergrond kleur */
+                                            padding: 0;                                           
                                             margin:0;
                                             width:100%;}
 
-.contactgegevens{background-color: #402502;
-                 color:#ffcc99;
+.contactgegevens{background-color: inherit;
+                 color:#FFF;
                  border:none;}
 
 #LoginGeg{ padding-right: 0;}
@@ -36,21 +38,28 @@ header, header #header, #header .container{ background-color: #402502;
 /******************************************************************************/
 
 /* alles die te maken heeft met de navigatie */
-.navbar-default{border: solid 0.6em #402502;}
-.navbar-default .navbar-nav>.active>a:hover{background-color:#164261;
-                                            color:#FFCC99;}
+.navbar-default{border: solid 0.6em #03899C;}
+.navbar-default .navbar-nav>.active>a:hover{background-color:#FF7A00;
+                                            color:#FFF;}
 .navbar-default .navbar-nav>.active>a,
-.navbar-default .navbar-nav>.active>a:focus{color:#402502;
-                                            background-color:#FFCC99}
+.navbar-default .navbar-nav>.active>a:focus{color:#000;
+                                            background-color:#FF7a00;}
 #navbar,
-.navbar-default .navbar-nav>li>a{color:#FFCC99;
-                                 background-color:#603A07;}
-.navbar-default .navbar-nav>li>a:hover{color:#FFCC99;
-                                       background-color:#164261;}
+.navbar-default .navbar-nav>li>a{color:#FFF;
+                                 background-color:#36BBCE;}
+.navbar-default .navbar-nav>li>a:hover{color:#FFF;
+                                       /*background-color:#164261;*/ /* heel donker blauw */
+                                       background-color:#015965;
+}
 .navbar-form .form-group{display:block;}
 .form-group{padding:5px 0 0;}
 .btn-default{margin:5px 0 0;}
 .navbar-form{margin: 0 ;}
+
+a {
+    color:#FF7A00;
+    font-weight: bold;
+}
 
 @media (min-width:767px)
 {form{vertical-align:top;}}
@@ -62,8 +71,9 @@ header, header #header, #header .container{ background-color: #402502;
                                              padding:0;
                                              width:100%;}
 
-#navbar{border:0;
-        border-bottom:0.1em #603A07 solid;}
+#navbar{
+    border:0;
+}
 
 #navigation{margin:0;
             padding:0;
@@ -71,27 +81,36 @@ header, header #header, #header .container{ background-color: #402502;
 /******************************************************************************/
 
 /* Alles ivm de Content */
-#content{background-color: #FFCC99;
-         color: #603A07;
+#content{background-color: #FFFFFF;
+         color: #015965;
          width:100%;
          margin:0;
-         padding:1em;}
+         padding:1em;
+         min-height: 700px;
+}
 
-#contactgegevens p{color:#603A07;}
+#contactgegevens p{color:#015965;}
 
-.jumbotron{background-color: #FFCC99;
+.jumbotron{background-color: #FFFFFF;
            padding: 0px;
-           color: #603A07;}
+           color: #000;}
 
 h2 .glyphicon {font-size: 0.8em;
                margin-right: 0.4em;}
 
 #image{max-width: 30%;
-       max-height: auto;}
+       max-height: 100%;}
+
+.navGroen{
+    color: #FF7A00;
+}
+label{
+    color:#000;
+}
 /******************************************************************************/
 
-/* css voor pagina contact */
-#contact{background-color: #FFCC99;
+/* --- contact --- */
+.contact{background-color: #FFFFFF;
          width:100%;
          margin:0;
          padding:1em;
@@ -109,12 +128,18 @@ h2 .glyphicon {font-size: 0.8em;
      float: left;}
 
 #right_content{float: right;
-               background-color: #FFCC99;
+               background-color: #FFFFFF;
                border:1px solid black;
                padding:10px;
                height:31.25em;
-               background:#66afe9;
+               background:#FFB673; /* kleur form */
                width: 49.5%;}
+
+.button{
+    margin: 0;
+    padding: 0;
+    float:left;
+}
 
 @media (max-width: 768px) 
 {
@@ -126,14 +151,52 @@ h2 .glyphicon {font-size: 0.8em;
          width: 100%;
          height: 18.75em;}
 }
+
+
+@media (min-width:767px){textarea.form-control{width: 100%;}
+                         input.form-control{width: 100%;}}
+
+@media (max-width:500px)
+{
+    .contact{
+        padding:1em;
+        margin: 0;
+        width: 100%;
+    }
+    #Map{width: 100%;
+         height:31.25em;
+         margin:0;
+         margin-bottom: 2em;
+         border: 0.1em solid black;
+         padding:0;
+         float: left;}
+
+    #right_content{float: left;
+                   margin:0;
+                   background-color: #FFFFFF;
+                   border:1px solid black;
+                   padding:10px;
+                   height:31.25em;
+                   background:#FFB673;
+                   width: 100%;}
+}
+
 /******************************************************************************/
 
-/* css voor pagina Links */
-#links a:active{color: #603A07;
-                text-decoration: none;}
-#links a:visited{color: #603A07;}
-#links a:hover{color:#66afe9;}
-#links a{color: #603A07;}
+/* --- Links --- */
+#links a:active{color: #000000;
+                text-decoration: none;
+                font-weight: normal;
+}
+#links a:visited{color: #000000;
+font-weight: normal;
+}
+#links a:hover{color:#5FC0CE;
+font-weight: normal;
+}
+#links a{color: #000000;
+font-weight: normal;
+}
 
 #links li{ list-style: circle;}
 
@@ -146,7 +209,7 @@ h2 .glyphicon {font-size: 0.8em;
 
 section form{border:1px solid black;
              padding:10px;
-             background:#66afe9;
+             background:#FFB673;
              min-width:450px;}
 
 input.form-control{width: 100%;}
@@ -154,6 +217,310 @@ input.form-control{width: 100%;}
 textarea.form-control {
     padding: 6px 12px;}
 /******************************************************************************/
+/* vrijwilligers */
+
+#logo_wtv{margin: 0px auto;
+          padding: 0;
+          float: right;
+}
+
+/******************************************************************************/
+
+/* --- OPMAAK_PDF --- */
+
+
+.PDF, #content_pdf{
+    background-color: #FFF;
+    color: #000000;
+}
+
+@page { margin-top: 130px;
+        margin-bottom: 70px;
+        margin-left: 30px;
+        margin-right: 30px;}
+
+#header_pdf { 
+    position: fixed;
+    left: 0px;
+    top: -100px;
+    right: 0px;
+    height: 100px;
+    background-color: #FFF;
+    text-align: center; 
+}
+#footer_pdf { 
+    font-size: 0.7em;
+    position: fixed; 
+    left: 0px; 
+    bottom: -70px; 
+    right: 0px; 
+    height: 50px; 
+    background-color: #FFF; 
+    text-align: left;
+}
+#footer .page:after { 
+    /*content_pdf: counter(page, upper-roman); */
+    content: counter(page, upper-roman);
+}
+
+.PDF_leeg{
+    width: 130px;
+}
+/******************************************************************************/
+
+/* --- leden/MAIL --- */
+
+
+.nieuwsbrief{
+    padding:0;
+    margin:0;
+    margin-bottom: 20px;
+    height: auto;
+    width: 100%;
+    float: left;
+    text-align: left;
+}
+.nieuwsbrief input.form-control{
+    width: 65%;
+}
+
+.nieuwsbrief textarea.form-control{
+    width: 65%;
+}
+
+.nieuwsbrief label{
+    text-align: left;
+    width: 30%;
+}
+
+#Formulier{border:1px solid black;
+           padding:10px;
+           background:#FFB673;
+           width: 70%;
+           margin: 0 auto;
+}
+
+#form_nieuwsbrief{
+    width: 100%;
+    font-size: 1em;
+}
+
+.KorteZin{
+    visibility: hidden;
+}
+
+.LangeZin{
+    width: 100%;
+}
+
+
+@media (max-width:767px)
+{
+    #geg{
+        width: 50%;
+    }
+
+    .KorteZin{
+        visibility: hidden;
+    }
+    .nieuwsbrief{
+        padding:0;
+        margin:0;
+        margin-bottom: 20px;
+        height: auto;
+        width: 100%;
+    }
+    .nieuwsbrief input.form-control{
+        width: 100%;
+        vertical-align: top;
+    }
+
+    .nieuwsbrief textarea.form-control{
+        width: 100%;
+        vertical-align: top;
+    }
+
+    .nieuwsbrief label{
+        text-align: left;
+        width: 100%;
+        vertical-align: top;
+    }
+
+    #Formulier{float: left;
+               width: 100%;
+               height: auto;
+    }
+
+    #form_nieuwsbrief{
+        width: 100%;
+        font-size: 1em;
+    }
+
+    .nieuwsbrief label.checkbox{
+        text-align: left;
+        width: 100%;
+        vertical-align: top;
+    }
+
+    .LangeZin{
+        width: 100%;
+    }
+
+}
+
+@media (max-width:500px)
+{
+    #geg{
+        padding-right: 0;
+        margin-right: 0;
+        width: 65%;
+        font-size: 13px;
+    }
+    
+    #content{
+        min-height: 200px;
+    }
+    .LangeZin{
+        visibility: hidden;
+        width: 100%;
+        overflow: hidden;
+        height: 1px;
+    }
+    .KorteZin{
+        visibility: visible;
+    }
+
+    #Formulier{float: left;
+               width: 100%;
+               height: auto;
+               min-width:200px;
+    }
+    .nieuwsbrief{
+        padding:0;
+        margin:0;
+        margin-bottom: 20px;
+        height: auto;
+        width: 100%;
+    }
+    .nieuwsbrief input.form-control{
+        width: 100%;
+        vertical-align: top;
+    }
+
+    .nieuwsbrief textarea.form-control{
+        width: 100%;
+        vertical-align: top;
+    }
+
+    .nieuwsbrief label.checkbox{
+        text-align: left;
+        width: 100%;
+        vertical-align: top;
+    }
+}
+
+
+/******************************************************************************/
+
+
+
+/* --- opmaak full callender --- */
+#wrap {
+    width: 100%;
+    margin: 0 auto;
+    background: #eee;
+
+}
+
+#external-events {
+    float: left;
+    width: 20%;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    background: #eee;
+    text-align: left;
+}
+
+#external-events h4 {
+    font-size: 16px;
+    margin-top: 0;
+    padding-top: 1em;
+}
+
+#external-events .fc-event {
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+#external-events p {
+    margin: 1.5em 0;
+    font-size: 11px;
+    color: #666;
+}
+
+#external-events p input {
+    margin: 0;
+    vertical-align: middle;
+}
+
+#calendar {
+    float: right;
+    width: 80%;
+    background: #eee;
+    min-height: 400px;
+    display: block;
+}
+
+#datepicker{
+    display: block;
+}
+#verwijder label{
+        font-weight: normal;
+        font-size: 10px;
+    }
+@media (max-width:1250px) {
+    #calendar {
+         float: right;
+         width: 80%
+    }
+    
+}
+
+@media (max-width:500px) {
+    #calendar {
+         width: 100%;
+    }
+    
+    #wrap{
+        width: 100%;
+    }
+    #datepicker input, #datepicker label{
+        display: block;
+    }
+    
+    #external-events{
+        width: 100%;
+        height: auto;
+    }
+    
+    #verwijder{
+        float:left;
+        vertical-align: bottom;
+    }
+    
+    #verwijder form, #external-events input{
+        display: block;
+        float: left;
+    }
+    
+    .element{
+        width:30%;
+        display: block;
+        float:left;
+        margin-right: 10%;
+    }
+}
+
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -181,12 +548,19 @@ textarea.form-control {
 /******************************************************************************/
 
 /* alles met de footer */
-#footer{color: #ffcc99;
-        background-color: #402502;
-        padding:0;
+#footer{color: #FFF;
+        background-color: #015965; /* donker kleur */
+        /*background-color: #03899C; */ /* licht kleur */
+        padding:0 0 0 1em;
         border: solid 0.06em;
-        border-color: #402502;
+        border-color: #03899C;
         width: 100%;}
+
+@media screen and (max-width: 768px){
+    #footer{
+        font-size: 12px;
+    }
+}
 /******************************************************************************/
 
 /* Maarten  */
@@ -201,6 +575,15 @@ textarea.form-control {
 }
 @media (max-width: 768px) {#video{display:none;}
 }
+
+/* stylen van panel forum */
+
+.panel-body.panel-list-group
+{padding:0;}
+.panel-body.panel-list-group .list-group {margin-bottom:0;}
+.panel-body.panel-list-group .list-group .list-group-item:first-child{
+    border-radius:0;}
+
 
 /****************/
 
@@ -219,16 +602,16 @@ textarea.form-control {
 */
 .cf:before,
 .cf:after {
-content: " "; /* 1 */
-display: table; /* 2 */
+    content: " "; /* 1 */
+    display: table; /* 2 */
 }
 .cf:after {
-clear: both;
+    clear: both;
 }
 /**
 * For IE 6/7 only
 * Include this rule to trigger hasLayout and contain floats.
 */
 .cf {
-*zoom: 1;
+    *zoom: 1;
 }
