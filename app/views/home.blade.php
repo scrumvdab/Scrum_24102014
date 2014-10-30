@@ -59,29 +59,28 @@
 
         <h3>Van 12u tot 14u</h3>
         <ul>
-            <li class="Opsomming"><p>Etentje met aperitief + keuzemenu + koffie voor 22 euro</p></li>
-            <li class="Opsomming"><p>kinderen tot 12 jaar: 11 euro. In prijs inbegrepen:</p></li>
-
-            <li class="Opsomming"><p>aperitief: cava of fruitsap</p></li>
-            <li class="Opsomming"><p>vlees: varkenshaasje - kalkoen - cote à l’os</p></li>
-            <li class="Opsomming"><p>sausen: béarnaisesaus, champignonsaus en pepersaus</p></li>
-            <li class="Opsomming"><p>frietjes en kroketjes</p></li>
-            <li class="Opsomming"><p>warme en koude groenten</p></li>
-            <li class="Opsomming"><p>koffie</p></li>
+            <li><p>Etentje met aperitief + keuzemenu + koffie voor 22 euro</p></li>
+            <li><p>kinderen tot 12 jaar: 11 euro. In prijs inbegrepen:</p></li>
+            <li><p>aperitief: cava of fruitsap</p></li>
+            <li><p>vlees: varkenshaasje - kalkoen - cote à l’os</p></li>
+            <li><p>sausen: béarnaisesaus, champignonsaus en pepersaus</p></li>
+            <li><p>frietjes en kroketjes</p></li>
+            <li><p>warme en koude groenten</p></li>
+            <li><p>koffie</p></li>
         </ul>
 
         <h3>Doorlopend</h3>
-        <ul class="Opsomming">
+        <ul>
             <li><p>kinderanimatie met springkasteel, grime, …</p></li>
             <li><p>verkoopsstandje met T-shirts, dekentjes, gadgets, …</p></li>
         </ul>
         <h3>Om 14 u</h3>
-        <ul class="Opsomming">
+        <ul>
             <li><p>dessertbuffet en dansnamiddag met DJ Steve</p></li>
         </ul>
 
         <h3>Om 16 u</h3>
-        <ul class="Opsomming">
+        <ul>
             <li><p>veiling van tweedehands hulpmiddelen voor mensen met beperking.</p></li>
             <li><p>De lijst van de te veilen materialen zal verschijnen in de kranten.</p></li>
         </ul>
