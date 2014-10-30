@@ -32,10 +32,11 @@
                     <div class="navbar pull-right">
                         <ul class="nav nav-pills nav-stacked">
                             @if(!Auth::check())
-                            <li>{{ HTML::link('users/login', 'Aanmelden') }}</li> 
-                            <li>{{ HTML::link('users/register', 'Registreren' ) }}</li> 
+                            <li>{{ HTML::link('user/login', 'Aanmelden') }}</li> 
+                            <li>{{ HTML::link('user/register', 'Registreren' ) }}</li> 
                             @else
-                            <li>{{ HTML::link('users/logout', 'Afmelden') }}</li>
+                            <li>{{ HTML::link('user/logout', 'Afmelden') }}</li>
+                            <li>{{ HTML::link('user/dashboard', 'Profiel') }}</li>
                             @endif
                         </ul>   
                     </div> 
@@ -62,7 +63,6 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
                         </button>
                     </div>
                     <div class="collapse navbar-collapse">
@@ -70,7 +70,6 @@
                             <li>{{ HTML::clever_link("home", 'home' ) }}</li>
                             <li>{{ HTML::clever_link("activiteiten", 'activiteiten' ) }}</li>
                             <li>{{ HTML::clever_link("contact", 'contact' ) }}</li>
-                            <li>{{ HTML::clever_link("leden", 'leden' ) }}</li>
                             <li>{{ HTML::clever_link("vrijwilligers", 'vrijwilligers' ) }}</li>
                             <li>{{ HTML::clever_link("forum", 'forum' ) }}</li>
                             <li>{{ HTML::clever_link("giften", 'giften' ) }}</li>

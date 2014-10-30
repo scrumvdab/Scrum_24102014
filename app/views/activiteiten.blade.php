@@ -18,15 +18,15 @@
 
                 <div id='external-events' class="cf">
                     <h4>Verplaatsbare evenementen</h4>
-                    <div class='element fc-event'>Evenement 1</div>
-                    <div class='element fc-event'>Evenement 2</div>
-                    <div class='element fc-event'>Evenement 3</div>
-                    <div class='element fc-event'>Evenement 4</div>
-                    <div class='element fc-event'>Evenement 5</div>
-                    <div id="verwijder">
+                    <div class='fc-event'>Evenement 1</div>
+                    <div class='fc-event'>Evenement 2</div>
+                    <div class='fc-event'>Evenement 3</div>
+                    <div class='fc-event'>Evenement 4</div>
+                    <div class='fc-event'>Evenement 5</div>
+                    <p>
                         <input type='checkbox' id='drop-remove' />
                         <label for='drop-remove'>verwijder na verslepen</label>
-                    </div>
+                    </p>
                 </div>
 
                 <div id='calendar'> &nbsp; </div>
@@ -158,5 +158,6 @@
 {{ HTML::script('fullcalendar/fullcalendar.js') }}
 {{ HTML::script('lib/jquery.min.js') }}
 {{ HTML::script('fullcalendar/gcal.js') }}
+
 {{ HTML::script('bootstrap/js/bootstrap.min.js') }}
 @stop
