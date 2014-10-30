@@ -10,24 +10,25 @@ class CreateUsersTable extends Migration {
      *
      * @return void
      */
-    public function up() {
-        Schema::create('users', function($table) {
+     public function up() {
+        Schema::create('users', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('username', 100);
+            $table->string('username', 100)->unique();
             $table->string('password', 100);
-            $table->integer('level_auth');
+            $table->enum('lvl_auth', [0, 1, 2])->default(0);
             $table->string('firstname', 100);
             $table->string('lastname', 100);
+            $table->string('adress', 100);
             $table->integer('zip');
+            $table->string('city', 100);
             $table->string('email', 100)->unique();
             $table->string('phone', 100);
             $table->text('message')->nullable();
             $table->boolean('news');
             $table->boolean('news_extra');
             $table->string('banknr', 100);
-            $table->string('remember_token');
             $table->timestamps();
-            
+            $table->rememberToken();
         });
     }
 
