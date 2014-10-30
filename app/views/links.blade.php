@@ -15,7 +15,7 @@
                 <div id="collapseOne" class="accordion-body collapse in">
                     <div class="accordion-inner">
                         <ul>
-                            <li><a href="http://de-iris.scoutnet.be/" target="_blank"> Jeugdbeweging De Iris </a></li>
+                            <li><a href="http://de-iris.scoutnet.be/" target="_blank"> Jeugdbeweging De Iris </a><div class="box"><iframe src="http://de-iris.scoutnet.be/" width = "500px" height = "500px"></iframe></div></li>
                             <li><a href="http://www.destokpop.be/" target="_blank"> Speel-o-theek de Stokpop </a></li>
                             <li><a href="http://www.spelewijs.be/" target="_blank"> Speelpeinwerking Spelewijs </a></li>
                             <li><a href="http://www.wandelclubdespiegelstappers.be/" target="_blank"> Wandelclub De Spiegelstappers </a></li>
@@ -23,7 +23,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- 2e element -->
 
             <div class="accordion-group">

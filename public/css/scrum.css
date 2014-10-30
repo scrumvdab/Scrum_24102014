@@ -2,9 +2,12 @@
 
 /****algemeen****/
 
+/*  */
+
 section #intro, body{
     /*background-color: #015965;*/ /*donker achtergrond kleur */
-    background-color: #03899C; /*lichter achtergrond kleur */
+    /*background-color: #03899C; /*lichter achtergrond kleur */
+    background-color: #014B72; /*bleek achtergrond kleur*/
 }
 
 body{color: #000000;
@@ -12,18 +15,21 @@ body{color: #000000;
      padding: 0;}
 
 #wrapper{width: 95%;
-         margin:0px auto;}
+         margin:0px auto;
+         border:0;
+}
 /******************************************************************************/
 
 /* header en alles daarrond */
-header, header #header, #header .container{ background-color: #015965; /* donker achtergrondkleur */
+header, header #header, #header .container{ background-color: #014B72; /*achtergrond kleur*/
+                                            /*background-color: #015965; /* donker achtergrondkleur */
                                             /*background-color: #03899C;*/ /*lichter achtergrond kleur */
                                             padding: 0;                                           
                                             margin:0;
                                             width:100%;}
 
 .contactgegevens{background-color: inherit;
-                 color:#FFF;
+                 color:#FFF; /*kleur contactgegevens*/
                  border:none;}
 
 #LoginGeg{ padding-right: 0;}
@@ -38,18 +44,22 @@ header, header #header, #header .container{ background-color: #015965; /* donker
 /******************************************************************************/
 
 /* alles die te maken heeft met de navigatie */
+#navbar{
+    border-radius: 0;
+}
 .navbar-default{border: solid 0.6em #03899C;}
 .navbar-default .navbar-nav>.active>a:hover{background-color:#FF7A00;
                                             color:#FFF;}
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:focus{color:#000;
-                                            background-color:#FF7a00;}
+                                            background-color:#FF7A00;}
 #navbar,
 .navbar-default .navbar-nav>li>a{color:#FFF;
-                                 background-color:#36BBCE;}
+                                 background-color:#428bca;}/*algemeen achtergrondkleur*/
+
 .navbar-default .navbar-nav>li>a:hover{color:#FFF;
                                        /*background-color:#164261;*/ /* heel donker blauw */
-                                       background-color:#015965;
+                                       background-color:#FF7A00;
 }
 .navbar-form .form-group{display:block;}
 .form-group{padding:5px 0 0;}
@@ -101,6 +111,7 @@ h2 .glyphicon {font-size: 0.8em;
 #image{max-width: 30%;
        max-height: 100%;}
 
+/* kleur van de links */
 .navGroen{
     color: #FF7A00;
 }
@@ -140,6 +151,20 @@ label{
     padding: 0;
     float:left;
 }
+
+.content_home ul{
+}
+
+.content_home ul li{
+    list-style: square;
+    padding: 0;
+}
+
+.content_home{
+    padding: 0 60px 0 60px;
+    width: 100%;
+}
+
 
 @media (max-width: 768px) 
 {
@@ -199,6 +224,16 @@ font-weight: normal;
 }
 
 #links li{ list-style: circle;}
+
+.box{
+    display: none;
+    width: 100%;
+}
+a:hover + .box,.box:hover{
+    display: block;
+    position: relative;
+    z-index: 100;
+}
 
 /******************************************************************************/
 
@@ -306,7 +341,7 @@ textarea.form-control {
 }
 
 .KorteZin{
-    visibility: hidden;
+    display: none;
 }
 
 .LangeZin{
@@ -321,7 +356,7 @@ textarea.form-control {
     }
 
     .KorteZin{
-        visibility: hidden;
+        display: none;
     }
     .nieuwsbrief{
         padding:0;
@@ -381,7 +416,7 @@ textarea.form-control {
         min-height: 200px;
     }
     .LangeZin{
-        visibility: hidden;
+        display: none;
         width: 100%;
         overflow: hidden;
         height: 1px;
@@ -549,18 +584,28 @@ textarea.form-control {
 
 /* alles met de footer */
 #footer{color: #FFF;
-        background-color: #015965; /* donker kleur */
+        background-color: #014B72; /* achtergrond kleur*/
+        /*background-color: #015965; /* donker kleur */
         /*background-color: #03899C; */ /* licht kleur */
         padding:0 0 0 1em;
         border: solid 0.06em;
         border-color: #03899C;
-        width: 100%;}
+        width: 100%;
+        margin-bottom: 0.5em;
+}
 
 @media screen and (max-width: 768px){
     #footer{
         font-size: 12px;
     }
 }
+/******************************************************************************/
+
+/* --- OPMAAK FORUM --- */
+.panel-primary>.panel-heading{
+    background-color: #428bca; /*donkerblauw*/
+}
+
 /******************************************************************************/
 
 /* Maarten  */
