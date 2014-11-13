@@ -1,6 +1,0 @@
-/bootstrap/compiled.php
-.env.*.php
-.env.php
-.DS_Store
-Thumbs.db
-/nbproject/private/
