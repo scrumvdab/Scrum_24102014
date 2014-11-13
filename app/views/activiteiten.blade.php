@@ -2,40 +2,35 @@
 @section('content')
 <!--begin inhoud-->
 
-<section id="wat">
-    <div class="container cf" id="content">
-        <div class="jumbotron" style="min-height:700px">
-            <h2 class="webfont">Hieronder vind u info over de activiteiten:</h2>
-            <div id="datepicker">
-                <label for="from">Van</label>
-                <input type="text" id="from" name="from">
-                <label for="to">tot</label>
-                <input type="text" id="to" name="to">
+
+<div class="jumbotron container cf" id="content">
+    <main>
+        <h1 class="hoofding">Hieronder vind u info over de activiteiten:</h1>
+        <div id="datepicker">
+            <label for="from">Van</label>
+            <input type="text" id="from" name="from">
+            <label for="to">tot</label>
+            <input type="text" id="to" name="to">
+        </div>
+        <div id='wrap' class="cf">
+            <div id='external-events' class="cf">
+                <h4>Verplaatsbare evenementen</h4>
+                <div class='fc-event'>Evenement 1</div>
+                <div class='fc-event'>Evenement 2</div>
+                <div class='fc-event'>Evenement 3</div>
+                <div class='fc-event'>Evenement 4</div>
+                <div class='fc-event'>Evenement 5</div>
+                <p>
+                    <input type='checkbox' id='drop-remove' />
+                    <label for='drop-remove'>verwijder na verslepen</label>
+                </p>
             </div>
+            <div id='calendar'> </div>
+        </div>
+      <!--  <iframe src="https://www.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=passchyn.maarten%40gmail.com&amp;color=%232952A3&amp;src=en.be%23holiday%40group.v.calendar.google.com&amp;color=%236B3304&amp;ctz=Europe%2FBrussels" style=" border-width:0 " width="100%" height="600px" frameborder="0" scrolling="no"></iframe></div> -->
+    </main>
+</div>
 
-
-            <div id='wrap' class="cf">
-
-                <div id='external-events' class="cf">
-                    <h4>Verplaatsbare evenementen</h4>
-                    <div class='fc-event'>Evenement 1</div>
-                    <div class='fc-event'>Evenement 2</div>
-                    <div class='fc-event'>Evenement 3</div>
-                    <div class='fc-event'>Evenement 4</div>
-                    <div class='fc-event'>Evenement 5</div>
-                    <p>
-                        <input type='checkbox' id='drop-remove' />
-                        <label for='drop-remove'>verwijder na verslepen</label>
-                    </p>
-                </div>
-
-                <div id='calendar'> &nbsp; </div>
-
-                <div style='clear:both'></div>
-
-            </div>
-          <!--  <iframe src="https://www.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=passchyn.maarten%40gmail.com&amp;color=%232952A3&amp;src=en.be%23holiday%40group.v.calendar.google.com&amp;color=%236B3304&amp;ctz=Europe%2FBrussels" style=" border-width:0 " width="100%" height="600px" frameborder="0" scrolling="no"></iframe></div> -->
-</section>
 
 
 
