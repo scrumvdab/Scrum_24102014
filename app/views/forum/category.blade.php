@@ -1,4 +1,4 @@
-
+@extends('templates.default')
 @section('content')
 <div class="container" id="content">
     <div class="navbar">
@@ -40,7 +40,7 @@
                                 <br>
                                 <br>
                                 <br>
-                                
+
                                 <span style="padding-top:300px;">{{ nl2br(BBCode::parse($thread->body)) }}</span>
 
                                 <span class="pull-right">
@@ -80,17 +80,19 @@
     </div>
 </div>
 
-@stop
 
-@section('javascript')
-@parent
+
+
+
 <script type="text/javascript" src="/js/forumjs.js"></script>
 @if(Session::has('modal'))
 <script type="text/javascript">
 $("{{Session::get('modal')}}").modal('show');
 </script>
-
 @endif
+{{ HTML::style("bootstrap/css/bootstrap.min.css") }}
+{{ HTML::style("css/scrum.css") }}
+{{ HTML::style("bootstrap/js/bootstrap.min.js") }}
 {{ HTML::script('http://code.jquery.com/jquery-2.1.1.min.js') }}
 {{ HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js') }}
 @stop

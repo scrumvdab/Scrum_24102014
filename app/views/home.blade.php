@@ -10,163 +10,19 @@
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                    <li data-target="#myCarousel" data-slide-to="3"></li>
-                    <li data-target="#myCarousel" data-slide-to="4"></li>
-                    <li data-target="#myCarousel" data-slide-to="5"></li>
-                    <li data-target="#myCarousel" data-slide-to="6"></li>
-                    <li data-target="#myCarousel" data-slide-to="7"></li>
-                    <li data-target="#myCarousel" data-slide-to="8"></li>
-                    <li data-target="#myCarousel" data-slide-to="9"></li>
-                    <li data-target="#myCarousel" data-slide-to="10"></li>
-                    <li data-target="#myCarousel" data-slide-to="11"></li>
+                    @for ($i = 2; $i < 31; $i++)
+                    <li data-target="#myCarousel" data-slide-to="{{ $i }}"></li>
+                    @endfor
                 </ol>
-                <div class="carousel-inner">
-
+                <div class="carousel-inner">   
                     <div class="item active">
-                        <img src="images/foto's WVA/10245381_1491561087743515_1190884257934023763_n.jpg" alt="First slide">
-                        <!--
-                         <div class="container">
-                             <div class="carousel-caption hideonsmall">
-                                 <h1>Hier komt dan de titel</h1>
-                                 <p>en een eventuele beschrijving van wat er nu te zien is</p>
-                             </div>
-                         </div>
-                        -->
+                        <img src="images/foto's WVA/1.jpg" alt="First slide">
                     </div>
-
+                    @for ($i = 2; $i < 15; $i++)
                     <div class="item">
-                        <img src="images/foto's WVA/10303455_1491560574410233_2924336962425892978_n.jpg" alt="Second slide">
-                        <!--
-                        <div class="container">
-                            <div class="carousel-caption hideonsmall">
-                                <h1>weer een andere titel</h1>
-                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            </div>
-                        -->
+                        <img src="images/foto's WVA/{{ $i }}.jpg" alt="slide">
                     </div>
-
-
-                    <div class="item">
-                        <img src="images/foto's WVA/10308395_1491561251076832_8122426987355020756_n.jpg" alt="Third slide">
-                        <!--
-                        <div class="container">
-                            <div class="carousel-caption hideonsmall">
-                                <h1>One more for good measure.</h1>
-                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>                   
-                            </div>
-                        </div>
-                        -->
-                    </div>
-
-                    <div class="item">
-                        <img src="images/foto's WVA/10320511_1491560701076887_3868585246593240909_n.jpg" alt="Third slide">
-                        <!--
-                        <div class="container">
-                            <div class="carousel-caption hideonsmall">
-                                <h1>One more for good measure.</h1>
-                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>                   
-                            </div>
-                        </div>
-                        -->
-                    </div>
-
-                    <div class="item">
-                        <img src="images/foto's WVA/10358882_1491562504410040_909871658544695278_n.jpg" alt="Third slide">
-                        <!--
-                        <div class="container">
-                            <div class="carousel-caption hideonsmall">
-                                <h1>One more for good measure.</h1>
-                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>                   
-                            </div>
-                        </div>
-                        -->
-                    </div>
-
-                    <div class="item">
-                        <img src="images/foto's WVA/10363499_1491562581076699_8813348314265233189_n.jpg" alt="Third slide">
-                        <!--
-                        <div class="container">
-                            <div class="carousel-caption hideonsmall">
-                                <h1>One more for good measure.</h1>
-                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>                   
-                            </div>
-                        </div>
-                        -->
-                    </div>
-
-                    <div class="item">
-                        <img src="images/foto's WVA/10363634_1491560171076940_4522468258002414703_n.jpg" alt="Third slide">
-                        <!--
-                        <div class="container">
-                            <div class="carousel-caption hideonsmall">
-                                <h1>One more for good measure.</h1>
-                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>                   
-                            </div>
-                        </div>
-                        -->
-                    </div>
-
-                    <div class="item">
-                        <img src="images/foto's WVA/10371472_1491560371076920_6369764457916773571_n.jpg" alt="Third slide">
-                        <!--
-                        <div class="container">
-                            <div class="carousel-caption hideonsmall">
-                                <h1>One more for good measure.</h1>
-                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>                   
-                            </div>
-                        </div>
-                        -->
-                    </div>
-
-                    <div class="item">
-                        <img src="images/foto's WVA/10371520_1491560687743555_390023558727083534_n.jpg" alt="Third slide">
-                        <!--
-                        <div class="container">
-                            <div class="carousel-caption hideonsmall">
-                                <h1>One more for good measure.</h1>
-                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>                   
-                            </div>
-                        </div>
-                        -->
-                    </div>
-
-                    <div class="item">
-                        <img src="images/foto's WVA/10372164_1491560321076925_3337415844333380279_n.jpg" alt="Third slide">
-                        <!--
-                        <div class="container">
-                            <div class="carousel-caption hideonsmall">
-                                <h1>One more for good measure.</h1>
-                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>                   
-                            </div>
-                        </div>
-                        -->
-                    </div>
-
-                    <div class="item">
-                        <img src="images/foto's WVA/10373805_1491562447743379_5615361048353460530_n.jpg" alt="Third slide">
-                        <!--
-                        <div class="container">
-                            <div class="carousel-caption hideonsmall">
-                                <h1>One more for good measure.</h1>
-                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>                   
-                            </div>
-                        </div>
-                        -->
-                    </div>
-
-                    <div class="item">
-                        <img src="images/foto's WVA/10376320_1491560354410255_4401556646191462216_n.jpg" alt="Third slide">
-                        <!--
-                        <div class="container">
-                            <div class="carousel-caption hideonsmall">
-                                <h1>One more for good measure.</h1>
-                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>                   
-                            </div>
-                        </div>
-                        -->
-                    </div>
+                    @endfor
                 </div>
                 <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
                 <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>

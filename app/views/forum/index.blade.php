@@ -26,7 +26,7 @@
                             @foreach($categories as $category)
                             @if($category->group_id == $group->id)
                             <a style="overflow:auto;" href= "{{URL::route('forum-category', $category->id)}}" class="list-group-item">{{ $category->title }}
-                               <img class="pull-right" style="border:1px red; height:100px; width:100px;" src="../public/forum/images/{{$user = DB::table('users')->where('id', $category->author_id)->first()->username}}.jpg">
+                               <img style="border:1px red; height:100px; width:100px; float:right;" src="../public/uploads/{{$user = DB::table('users')->where('id', $category->author_id)->first()->id}}.jpg"/>
                                 <br>
                                 <br>
                                 <br>
@@ -144,10 +144,7 @@
         </div>
     </div>
 </div>
-@stop
 
-@section('javascript')
-@parent
 <script type="text/javascript" src="bootstrap/js/forumjs.js">
 </script>
 @if(Session::has('modal'))

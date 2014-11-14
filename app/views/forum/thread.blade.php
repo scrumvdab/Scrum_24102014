@@ -1,4 +1,4 @@
-
+@extends('templates.default')
 @section('content')
 <div class="container" id="content">
     <div class="navbar">
@@ -16,7 +16,7 @@
 
                 <div class="well">
                     <h2>{{ $thread->title }}</h2>
-                    <img class="pull-right" style="border:1px red; height:100px; width:100px;" src="../images/{{$user = DB::table('users')->where('id', $thread->author_id)->first()->username}}.jpg">
+                    <img style="border:1px red; height:100px; width:100px; float:right;" src="/Scrum_24102014/public/uploads/{{$user = DB::table('users')->where('id', $thread->author_id)->first()->id}}.jpg"/>
                               
                                 <br>
                     <h4>Verzonden door: {{ $author }} op {{ $thread->created_at }}</h4>
@@ -28,5 +28,5 @@
     </div>
 </div>
 {{ HTML::script('http://code.jquery.com/jquery-2.1.1.min.js') }}
-    {{ HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js') }}
+{{ HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js') }}
 @stop

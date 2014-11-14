@@ -52,7 +52,7 @@ header, header #header, #header .container{ background-color: #014B72; /*achterg
                                             color:#FFF;}
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:focus{color:#000;
-                                            background-color:#FF7A00;}
+                                            background-color:#FFF;}
 #navbar,
 .navbar-default .navbar-nav>li>a{color:#FFF;
                                  background-color:#428bca;}/*algemeen achtergrondkleur*/
