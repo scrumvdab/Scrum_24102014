@@ -2,7 +2,7 @@
 {{ HTML::style('bootstrap/css/jquery-ui.css') }}
 @section('content')
 <div class="container" id="content">
-    <div class="jumbotron">
+    <div class="jumbotron" id="register">
         {{ Form::model(array('url'=>'user/create', 'class'=>'form-signup')) }}
         <h2 class="form-signup-heading">Registreren</h2>
         <ul>

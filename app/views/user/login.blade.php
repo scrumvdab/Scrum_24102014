@@ -2,7 +2,7 @@
 {{ HTML::style('bootstrap/css/jquery-ui.css') }}
 @section('content')
 <div class="container" id="content">
-    <div class="jumbotron">
+    <div class="jumbotron" id="login">
         {{ Form::open(array('url'=>'user/signin', 'class'=>'form-signin')) }}
         <h2 class="form-signin-heading">Aanmelden</h2>
         {{ Form::label('username', 'Gebruikersnaam: '); }}

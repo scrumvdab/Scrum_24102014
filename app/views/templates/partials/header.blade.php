@@ -40,7 +40,7 @@
                             @endif
                         </ul>   
                     </div> 
-                    <div class="col-md-2 col-xs-2">
+                    <div class="col-md-2 col-xs-2" id="popup_warning">
                         @if(Session::has('message'))
                         <div class="alert alert-warning alert-dismissible " role="alert">
                             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -67,7 +67,7 @@
                         </button>
                     </div>
                     <div class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav" id="buttons">
                             <li>{{ HTML::clever_link("home", 'home' ) }}</li>
                             <li>{{ HTML::clever_link("activiteiten", 'activiteiten' ) }}</li>
                             <li>{{ HTML::clever_link("contact", 'contact' ) }}</li>

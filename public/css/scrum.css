@@ -21,6 +21,10 @@ a, .navGroen {
     font-weight: normal;
     font-size: 36px;
 }
+
+#content{
+    box-shadow: 0px 0px 10px 5px #000000;
+}
 /******************************************************************************/
 /* HEADER */
 header, header #header, #header .container{ 
@@ -88,6 +92,19 @@ header, header #header, #header .container{
     padding:0;
     width: 100%;
 }
+.navbar-nav{
+    display: block;
+    width: 100%;
+    padding:0;
+    margin: 0 0 0 25px; 
+}
+#buttons li {
+    width: 12%;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+/**********************/
 /******************************************************************************/
 /* Alles ivm de Content */
 #content{
@@ -345,13 +362,28 @@ main iframe{
     height: 100%;
 }
 /******************************************************************************/
-/* alles met de footer */
-footer{
+/* INVULFORMULIER USER */
+#login form label{
+    float: left;
+    width: 150px;
+    text-align: left;
+    margin-right:12px; 
+}
+#register form label{
+    float: left;
+    width: 180px;
+    text-align: left;
+    margin-right:12px; 
+}
+/******************************************************************************/
+/* FOOTER */
+footer.container{
     color: #FFF;
     background-color: #014B72; /* achtergrond kleur*/
     padding:0.5em 0 0 1em;
     border: none;
     width: 100%;
+    margin-top: 1em;
     margin-bottom: 0.5em;
 }
 /******************************************************************************/
@@ -379,7 +411,7 @@ footer{
 }
 /******************************************************************************/
 /**** MEDIA QUERRIES ****/
-@media screen and(max-width:500px){
+@media (max-width:500px) {
     /* CONTACT */
     .contact{
         padding:1em;
@@ -406,34 +438,28 @@ footer{
         width: 100%;
     }
     /*******************************************/
-
     /* FULLCALENDER */
     #calendar {
         width: 100%;
     }
-
     #wrap{
         width: 100%;
     }
     #datepicker input, #datepicker label{
         display: block;
     }
-
     #external-events{
         width: 100%;
         height: auto;
     }
-
     #verwijder{
         float:left;
         vertical-align: bottom;
     }
-
     #verwijder form, #external-events input{
         display: block;
         float: left;
     }
-
     .element{
         width:30%;
         display: block;
@@ -441,8 +467,75 @@ footer{
         margin-right: 10%;
     }
     /***************************************/
+    /* CAROUSEL */
+    #myCarousel, .carousel-inner, .carousel .item{
+        display: none;
+    }
+    /***************************************/
 }
-@media screen and(min-width:767px){
+@media(max-width: 768px){
+    /* header*/
+    #geg {
+        float: left;
+        width: 65%;
+        height: auto;
+        padding: 0 0 0 5px;
+    }
+    #popup_warning{
+        width: 80%;
+        height: auto;
+        padding:0;
+        margin: 5px auto 5px auto;
+    }
+    .alert{
+        display: block;
+        margin: 0 auto;
+        padding: 5px;
+        width: 100%;
+        height: auto;
+        border: 2px solid black;
+    }
+    /******************/
+    /* NAVIGATION */
+    .nav li{
+        padding: 0;
+    }
+    /*****************************/
+    /* CONTENT */
+    #video{
+        display:none;
+    }
+    .content_home{
+        padding: 10px;
+    }
+    #geg{
+        width: 65%;
+    }
+    /*********************************/
+    /* CONTACT */
+    #right_content {
+        float: left;
+        width: 100%;
+        height: auto;
+    }
+    #Map{
+        float: left;
+        width: 100%;
+        height: 18.75em;
+    }
+    /*******************************/
+    /* FOOTER */
+    footer{
+        font-size: 12px;
+    }
+    /*******************************/
+    /* CAROUSEL */
+    #myCarousel, .carousel-inner, .carousel .item{
+        display: none;
+    }
+    /********************/
+}
+@media(min-width:767px){
     /* NAVIGATION */
     textarea.form-control{
         width: 100%;
@@ -474,50 +567,24 @@ footer{
     }
     /*********************/
 }
-
-@media screen and(max-width: 768px){
-    /* header*/
-    #geg {
-        float: left;
+@media(min-width:900px){
+    /* NAVBAR */
+    .navbar-nav{
+        display: block;
         width: 100%;
-        height: auto;
+        padding:0;
+        margin: 0 0 0 30px; 
     }
-    /*******************/
-
-    /* NAVIGATION */
-    .nav li{
-        padding-left: 15px;
+    #buttons li {
+        width: 12%;
+        text-align: center;
+        font-size: 16px;
+        font-weight: normal;
     }
-    /*****************************/
-
-    /* CONTENT */
-    #video{
-        display:none;
-    }
-    /*********************************/
-
-    /* CONTACT */
-    #right_content {
-        float: left;
-        width: 100%;
-        height: auto;
-    }
-
-    #Map{
-        float: left;
-        width: 100%;
-        height: 18.75em;
-    }
-    /*******************************/
-
-    /* FOOTER */
-    footer{
-        font-size: 12px;
-    }
-    /*******************************/
+    /**********************/
 }
 
-@media (max-width:1250px){
+@media(max-width:1250px){
     /* CALENDAR */
     #calendar {
         float: right;
