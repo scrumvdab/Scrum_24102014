@@ -8,12 +8,9 @@
                     <li><a href="{{ URL::route('forum-home') }}">Forums</a></li>
                     <li class="active">{{ $category->title }}</li>
                 </ol>
-
                 @if(Auth::check())
                 <a href="{{ URL::route('forum-get-new-thread', $category->id) }}" class="btn btn-default">Voeg onderwerp toe</a>
-
                 @endif
-
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         @if(Auth::check() && Auth::user()->isAdmin())
@@ -33,7 +30,7 @@
                         <div class="list-group">
                             @foreach($threads as $thread)
                             <a href="{{ URL::route('forum-thread', $thread->id) }}" class="list-group-item"><span style="text-decoration:underline">{{ $thread->title }}</span>
-                                <img class="pull-right" style="border:1px red; height:100px; width:100px;" src="../images/{{$user = DB::table('users')->where('id', $thread->author_id)->first()->username}}.jpg">
+                                <img style="border:1px red; height:100px; width:100px; float:right;" src="/Scrum/public/uploads/{{$user = DB::table('users')->where('id', $thread->author_id)->first()->id}}.jpg">
                                 <br>
                                 <br>
                                 <br>
@@ -51,7 +48,6 @@
                         </div>
                     </div>
                 </div>
-
                 @if(Auth::check() && Auth::user()->isAdmin())
                 <div class="modal fade" id="category_delete" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog">
@@ -79,20 +75,12 @@
         </div>
     </div>
 </div>
-
-
-
-
-
 <script type="text/javascript" src="/js/forumjs.js"></script>
 @if(Session::has('modal'))
 <script type="text/javascript">
 $("{{Session::get('modal')}}").modal('show');
 </script>
 @endif
-{{ HTML::style("bootstrap/css/bootstrap.min.css") }}
-{{ HTML::style("css/scrum.css") }}
-{{ HTML::style("bootstrap/js/bootstrap.min.js") }}
 {{ HTML::script('http://code.jquery.com/jquery-2.1.1.min.js') }}
 {{ HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js') }}
 @stop

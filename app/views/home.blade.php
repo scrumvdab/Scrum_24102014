@@ -10,15 +10,15 @@
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    @for ($i = 2; $i < 31; $i++)
+                    @for ($i = 1; $i < 30; $i++)
                     <li data-target="#myCarousel" data-slide-to="{{ $i }}"></li>
                     @endfor
                 </ol>
                 <div class="carousel-inner">   
                     <div class="item active">
-                        <img src="images/foto's WVA/1.jpg" alt="First slide">
+                        <img src="images/foto's WVA/0.jpg" alt="First slide">
                     </div>
-                    @for ($i = 2; $i < 15; $i++)
+                    @for ($i = 1; $i < 30; $i++)
                     <div class="item">
                         <img src="images/foto's WVA/{{ $i }}.jpg" alt="slide">
                     </div>
@@ -34,8 +34,7 @@
         <div class="container content_home">
             <h1>Nieuws</h1>
             <h2>Word onze vriend op Facebook!</h2>
-            <p>Voeg 'WVA vzw' toe als vriend op Facebook om steeds van alle nieuwtjes op de hoogte te blijven!
-                BENEFIETFEEST WVA Vzw</p>
+            <p>Voeg 'WVA vzw' toe als vriend op Facebook om steeds van alle nieuwtjes op de hoogte te blijven! BENEFIETFEEST WVA Vzw</p>
             <p>Zoals je vast weet, veranderde WVA vzw onlangs van naam. Voortaan heten we niet langer Werkgroep Vorming en Aktie.</p>
 
             <p>Vanaf september 2014 zijn we 'Westhoek Vrijetijd Anders vzw' geworden. En met een nieuwe naam, gaat natuurlijk ook een feest gepaard! Daarom organiseert WVA vzw op zondag 26 oktober een heus Benefietfeest.</p>
@@ -68,7 +67,7 @@
                 <li><p>veiling van tweedehands hulpmiddelen voor mensen met beperking.</p></li>
                 <li><p>De lijst van de te veilen materialen zal verschijnen in de kranten.</p></li>
             </ul>
-            <p>&nbsp;</p>
+            <br/>
             <p>Voor het etentje dient u vooraf in te schrijven !</p>
             <p>U kan eetkaarten en/of de veilinglijst komen ophalen op ons adres:</p>
             <p>WVA vzw, Rijselstraat 98 te Ieper</p>
@@ -78,12 +77,13 @@
             <p>Uw inschrijving voor de maaltijd is pas definitief na de ontvangst van</p>
             <p>betaling op het nummer BE03 4648 2101 1184 met de vermelding</p>
             <p>“maaltijd: …personen x €22 - … kinderen x €11”</p>
-            <p>&nbsp;</p>   
+            <br/>  
             <p>U KAN OOK STEUNKAARTEN KOPEN VOOR 5 EURO</p>
             <p>DE OPBRENGST VAN DIT BENEFIETFEEST</p>
             <p>GAAT NAAR DE WERKING VAN WVA VZW</p>
-            <p>&nbsp;</p>
+            <br/>
             <p>Word zeker ook vriend van WVA vzw op <a href="https://www.facebook.com/events/685580554852792/?fref=ts" target="_blank">Facebook!</a> Daar kun je op de hoogte blijven van al onze activiteiten!</p>
+        
         </div>
     </main>
 </div>
@@ -92,6 +92,7 @@
 
 {{ HTML::script('http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js') }}
 {{ HTML::script('bootstrap/js/bootstrap.min.js') }}
+
 <script>
     $(document).ready(function () {
         $('.carousel').carousel({

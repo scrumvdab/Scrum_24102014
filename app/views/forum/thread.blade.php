@@ -10,15 +10,15 @@
                         <li><a href="{{ URL::route('forum-category', $thread->category_id) }}">{{ $thread->category->title }}</a></li>
                         <li class="active">{{ $thread->title }}</li>
                     </ol>
-
+                    @if(Auth::user()->isAdmin() || Auth::user()->id == $thread->author_id)
+                    
                     <a href="{{ URL::route('forum-delete-thread', $thread->id) }}" class="btn btn-danger pull-right">Verwijder</a>
+                    @endif
                 </div>
-
                 <div class="well">
                     <h2>{{ $thread->title }}</h2>
-                    <img style="border:1px red; height:100px; width:100px; float:right;" src="/Scrum_24102014/public/uploads/{{$user = DB::table('users')->where('id', $thread->author_id)->first()->id}}.jpg"/>
-                              
-                                <br>
+                    <img style="border:1px red; height:100px; width:100px; float:right;" src="/Scrum/public/uploads/{{$user = DB::table('users')->where('id', $thread->author_id)->first()->id}}.jpg">
+                    <br>
                     <h4>Verzonden door: {{ $author }} op {{ $thread->created_at }}</h4>
                     <hr>
                     <p>{{ nl2br(BBCode::parse($thread->body)) }}</p>

@@ -7,7 +7,6 @@
                 @if (Auth::check() && Auth::user()->isAdmin())
                 <a href="#" class="btn btn-default" data-toggle="modal" data-target="#group_form">Voeg groep toe</a>
                 @endif
-
                 @foreach($groups as $group)
                 <div class="panel panel-primary">
                     <div class="panel-heading">
@@ -26,27 +25,14 @@
                             @foreach($categories as $category)
                             @if($category->group_id == $group->id)
                             <a style="overflow:auto;" href= "{{URL::route('forum-category', $category->id)}}" class="list-group-item">{{ $category->title }}
-                               <img style="border:1px red; height:100px; width:100px; float:right;" src="../public/uploads/{{$user = DB::table('users')->where('id', $category->author_id)->first()->id}}.jpg"/>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                
-                                <span class="pull-right">
-                                    Toegevoegd door: 
-                                    {{$user = DB::table('users')->where('id', $category->author_id)->first()->username}}
-                                </span>
+
                             </a>
                             @endif
                             @endforeach
                         </div>
-
                     </div>
                 </div>
                 @endforeach
-
                 @if (Auth::check() && Auth::user()->isAdmin())
                 <div class="modal fade" id="group_form" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog">
@@ -70,7 +56,6 @@
 
                                     {{Form::token()}}
                                 </form>
-
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
@@ -99,10 +84,8 @@
                                     @if($errors->has('category_name'))
                                     <p>{{$errors->first('category_name')}}</p>
                                     @endif
-
                                     {{Form::token()}}
                                 </form>
-
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
@@ -132,19 +115,13 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
                 @endif
             </div>
             <!-- einde code delete controle 16/10/2014 -->
-
-
-
         </div>
     </div>
 </div>
-
 <script type="text/javascript" src="bootstrap/js/forumjs.js">
 </script>
 @if(Session::has('modal'))
@@ -152,7 +129,6 @@
     $("{{Session::get('modal')}}").modal('show');
 </script>
 @endif
-
 @if(Session::has('category-modal') && Session::has('group-id'))
 <script type="text/javascript">
     $("#category_form").prop('action', "forum/category/{{ Session::get('group-id') }}/new");

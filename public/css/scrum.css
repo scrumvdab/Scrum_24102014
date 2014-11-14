@@ -1,250 +1,195 @@
-/* vdab_layout startbestand */
-
-/****algemeen****/
-
-/*  */
-
+/******************************************************************************/
+/* ALGEMEEN */
 section #intro, body{
-    /*background-color: #015965;*/ /*donker achtergrond kleur */
-    /*background-color: #03899C; /*lichter achtergrond kleur */
-    background-color: #014B72; /*bleek achtergrond kleur*/
+    background-color: #014B72; /*blauw kleur*/
 }
-
-body{color: #000000;
-     margin: 0;
-     padding: 0;}
-
-#wrapper{width: 95%;
-         margin:0px auto;
-         border:0;
+body{
+    color: #000000;
+    margin: 0;
+    padding: 0;
 }
-/******************************************************************************/
-
-/* header en alles daarrond */
-header, header #header, #header .container{ background-color: #014B72; /*achtergrond kleur*/
-                                            /*background-color: #015965; /* donker achtergrondkleur */
-                                            /*background-color: #03899C;*/ /*lichter achtergrond kleur */
-                                            padding: 0;                                           
-                                            margin:0;
-                                            width:100%;}
-
-.contactgegevens{background-color: inherit;
-                 color:#FFF; /*kleur contactgegevens*/
-                 border:none;}
-
-#LoginGeg{ padding-right: 0;}
-
-@media (max-width: 768px) 
-{
-    #geg {float: left;
-          width: 100%;
-          height: auto;}
+#wrapper{
+    width: 95%;
+    margin:0px auto;
+    border:0;
 }
-
-/******************************************************************************/
-
-/* alles die te maken heeft met de navigatie */
-#navbar{
-    border-radius: 0;
-}
-.navbar-default{border: solid 0.6em #03899C;}
-.navbar-default .navbar-nav>.active>a:hover{background-color:#FF7A00;
-                                            color:#FFF;}
-.navbar-default .navbar-nav>.active>a,
-.navbar-default .navbar-nav>.active>a:focus{color:#000;
-                                            background-color:#FFF;}
-#navbar,
-.navbar-default .navbar-nav>li>a{color:#FFF;
-                                 background-color:#428bca;}/*algemeen achtergrondkleur*/
-
-.navbar-default .navbar-nav>li>a:hover{color:#FFF;
-                                       /*background-color:#164261;*/ /* heel donker blauw */
-                                       background-color:#FF7A00;
-}
-.navbar-form .form-group{display:block;}
-.form-group{padding:5px 0 0;}
-.btn-default{margin:5px 0 0;}
-.navbar-form{margin: 0 ;}
-
-a {
+a, .navGroen {
     color:#FF7A00;
     font-weight: bold;
 }
-
-@media (min-width:767px){
-    textarea.form-control{width: 100%;}
-    input.form-control{width: 100%;}
-    form{vertical-align:top;}
+.jumbotron h1, h1{
+    font-weight: normal;
+    font-size: 36px;
+}
+/******************************************************************************/
+/* HEADER */
+header, header #header, #header .container{ 
+    background-color: #014B72; /*donkerblauw kleur*/
+    padding: 0;                                           
+    margin:0;
+    width:100%;
+}
+.contactgegevens{
+    background-color: inherit;
+    color:#FFF;
+    border:none;
+}
+#LoginGeg{ 
+    padding-right: 0;
+}
+/******************************************************************************/
+/* NAVIGATION */
+#navbar{
+    border-radius: 0;
+}
+.navbar-default{
+    border: solid 0.6em #03899C;
+}
+.navbar-default .navbar-nav>.active>a:hover{
+    background-color:#FF7A00;
+    color:#FFF;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus{
+    color:#000;
+    background-color:#FFF;
 }
 
-@media(max-width:767px){
-    .nav li{padding-left: 15px;}
+#navbar, .navbar-default .navbar-nav>li>a{
+    color:#FFF;
+    background-color:#428bca;/*algemeen achtergrondkleur*/
 }
 
-.container #navigation, #navigation, #navbar{margin: 0;
-                                             padding:0;
-                                             width:100%;}
-
+.navbar-default .navbar-nav>li>a:hover{
+    color:#FFF;
+    background-color:#FF7A00;
+}
+.navbar-form .form-group{
+    display:block;
+}
+.form-group{
+    padding:5px 0 0;
+}
+.btn-default{
+    margin:5px 0 0;
+}
+.navbar-form{
+    margin: 0 ;
+}
+.container #navigation, #navigation, #navbar{
+    margin: 0;
+    padding:0;
+    width:100%;
+}
 #navbar{
     border:0;
 }
-
-#navigation{margin:0;
-            padding:0;
-            width: 100%;}
-/******************************************************************************/
-
-/* Alles ivm de Content */
-#content{background-color: #FFFFFF;
-         color: #000000;
-         width:100%;
-         margin:0;
-         padding:1em;
-         min-height: 700px;
+#navigation{
+    margin:0;
+    padding:0;
+    width: 100%;
 }
-
-#contactgegevens p{color:#015965;}
-
-.jumbotron{background-color: #FFFFFF;
-           padding: 0px;
-           color: #000;}
-
-h2 .glyphicon {font-size: 0.8em;
-               margin-right: 0.4em;}
-
-#image{max-width: 30%;
-       max-height: 100%;}
-
-/* kleur van de links */
-.navGroen{
-    color: #FF7A00;
+/******************************************************************************/
+/* Alles ivm de Content */
+#content{
+    background-color: #FFFFFF;
+    color: #000000;
+    width:100%;
+    margin:0;
+    padding:1em;
+    min-height: 700px;
+}
+#contactgegevens p{
+    color:#015965;
+}
+.jumbotron{
+    background-color: #FFFFFF;
+    padding: 0px;
+    color: #000;
+}
+h2 .glyphicon {
+    font-size: 0.8em;
+    margin-right: 0.4em;
+}
+#image{
+    max-width: 30%;
+    max-height: 100%;
 }
 label{
     color:#000;
 }
-
-h1{
-    font-weight: normal;
-    font-size: 36px;
-}
 .hoofding{
     font-size: 36px;
 }
-
-
 /******************************************************************************/
-
 /* --- contact --- */
-.contact{background-color: #FFFFFF;
-         width:100%;
-         margin:0;
-         padding:1em;
-         padding-left: 3.75em;
-         padding-right: 3.75em;}
-
-#contactgegevens{ font-size: 1em;
-                  clear: right;}
-
-#Map{width: 49.5%;
-     height:31.25em;
-     margin-bottom: 2em;
-     border: 0.1em solid black;
-     padding:0;
-     float: left;}
-
-#right_content{float: right;
-               background-color: #FFFFFF;
-               border:1px solid black;
-               padding:10px;
-               height:31.25em;
-               background:#FFB673; /* kleur form */
-               width: 49.5%;}
-
+.contact{
+    background-color: #FFFFFF;
+    width:100%;
+    margin:0;
+    padding:1em;
+    padding-left: 3.75em;
+    padding-right: 3.75em;
+}
+#contactgegevens{
+    font-size: 1em;
+    clear: right;
+}
+#Map{
+    width: 49.5%;
+    height:31.25em;
+    margin-bottom: 2em;
+    border: 0.1em solid black;
+    padding:0;
+    float: left;
+}
+#right_content{
+    float: right;
+    background-color: #FFFFFF;
+    border:1px solid black;
+    padding:10px;
+    height:31.25em;
+    background:#FFB673; /* kleur form */
+    width: 49.5%;
+}
 .button{
     margin: 0;
     padding: 0;
     float:left;
 }
-
-.content_home ul{
-}
-
 .content_home ul li{
     list-style: square;
     padding: 0;
 }
-
 .content_home{
     padding: 0 60px 0 60px;
     width: 100%;
 }
-
-
-@media (max-width: 768px) 
-{
-    #right_content {float: left;
-                    width: 100%;
-                    height: auto;}
-
-    #Map{float: left;
-         width: 100%;
-         height: 18.75em;}
-}
-
-
-@media (min-width:767px){textarea.form-control{width: 100%;}
-                         input.form-control{width: 100%;}
-                         }
-
-@media (max-width:500px)
-{
-    .contact{
-        padding:1em;
-        margin: 0;
-        width: 100%;
-    }
-    #Map{width: 100%;
-         height:31.25em;
-         margin:0;
-         margin-bottom: 2em;
-         border: 0.1em solid black;
-         padding:0;
-         float: left;}
-
-    #right_content{float: left;
-                   margin:0;
-                   background-color: #FFFFFF;
-                   border:1px solid black;
-                   padding:10px;
-                   height:31.25em;
-                   background:#FFB673;
-                   width: 100%;}
-}
-
 /******************************************************************************/
-
 /* --- Links --- */
 article h2 {
     font-size: 1em;
     font-weight: bold;
 }
-
-#links a:active{color: #000000;
-                text-decoration: none;
-                font-weight: normal;
+#links a:active{
+    color: #000000;
+    text-decoration: none;
+    font-weight: normal;
 }
-#links a:visited{color: #000000;
-font-weight: normal;
+#links a:visited{
+    color: #000000;
+    font-weight: normal;
 }
-#links a:hover{color:#5FC0CE;
-font-weight: normal;
+#links a:hover{
+    color:#5FC0CE;
+    font-weight: normal;
 }
-#links a{color: #000000;
-font-weight: normal;
+#links a{
+    color: #000000;
+    font-weight: normal;
 }
-
-#links li{ list-style: circle;}
-
+#links li{
+    list-style: circle;
+}
 .box{
     display: none;
     width: 100%;
@@ -254,64 +199,53 @@ a:hover + .box,.box:hover{
     position: relative;
     z-index: 100;
 }
-
 /******************************************************************************/
-
 /* css voor form */
-.form-horizontal{width: 85%;
-                 margin: auto auto;}
-
-
-section form{border:1px solid black;
-             padding:10px;
-             background:#FFB673;
-             min-width:450px;}
-
-input.form-control{width: 100%;}
-
+.form-horizontal{
+    width: 85%;
+    margin: auto auto;
+}
+section form{
+    border:1px solid black;
+    padding:10px;
+    background:#FFB673;
+    min-width:450px;
+}
+input.form-control{
+    width: 100%;
+}
 textarea.form-control {
-    padding: 6px 12px;}
+    padding: 6px 12px;
+}
 /******************************************************************************/
 /* vrijwilligers */
-
-#logo_wtv img{margin: 0px auto;
-          padding: 0;
-          display: block;
+#logo_wtv img{
+    margin: 0px auto;
+    padding: 0;
+    display: block;
 }
-
 main .jumbotron p{
     font-size: 1em;
 }
-
 article ul li p {
     font-size: 1em;
     font-weight: normal;
 }
-
 main iframe{
     margin: 0 auto;
 }
-
-@media screen and (min-width:768px){
-    .jumbotron h1{
-        font-size: 36px;
-    }
-}
 /******************************************************************************/
-
 /* --- OPMAAK_PDF --- */
-
-
 .PDF, #content_pdf{
     background-color: #FFF;
     color: #000000;
 }
-
-@page { margin-top: 130px;
-        margin-bottom: 70px;
-        margin-left: 30px;
-        margin-right: 30px;}
-
+@page { 
+    margin-top: 130px;
+    margin-bottom: 70px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
 #header_pdf { 
     position: fixed;
     left: 0px;
@@ -335,176 +269,16 @@ main iframe{
     /*content_pdf: counter(page, upper-roman); */
     content: counter(page, upper-roman);
 }
-
 .PDF_leeg{
     width: 130px;
 }
 /******************************************************************************/
-
-/* --- leden/MAIL --- */
-
-
-.nieuwsbrief{
-    padding:0;
-    margin:0;
-    margin-bottom: 20px;
-    height: auto;
-    width: 100%;
-    float: left;
-    text-align: left;
-}
-.nieuwsbrief input.form-control{
-    width: 65%;
-}
-
-.nieuwsbrief textarea.form-control{
-    width: 65%;
-}
-
-.nieuwsbrief label{
-    text-align: left;
-    width: 30%;
-}
-
-#Formulier{border:1px solid black;
-           padding:10px;
-           background:#FFB673;
-           width: 70%;
-           margin: 0 auto;
-}
-
-#form_nieuwsbrief{
-    width: 100%;
-    font-size: 1em;
-}
-
-.KorteZin{
-    display: none;
-}
-
-.LangeZin{
-    width: 100%;
-}
-
-
-@media (max-width:767px)
-{
-    #geg{
-        width: 50%;
-    }
-
-    .KorteZin{
-        display: none;
-    }
-    .nieuwsbrief{
-        padding:0;
-        margin:0;
-        margin-bottom: 20px;
-        height: auto;
-        width: 100%;
-    }
-    .nieuwsbrief input.form-control{
-        width: 100%;
-        vertical-align: top;
-    }
-
-    .nieuwsbrief textarea.form-control{
-        width: 100%;
-        vertical-align: top;
-    }
-
-    .nieuwsbrief label{
-        text-align: left;
-        width: 100%;
-        vertical-align: top;
-    }
-
-    #Formulier{float: left;
-               width: 100%;
-               height: auto;
-    }
-
-    #form_nieuwsbrief{
-        width: 100%;
-        font-size: 1em;
-    }
-
-    .nieuwsbrief label.checkbox{
-        text-align: left;
-        width: 100%;
-        vertical-align: top;
-    }
-
-    .LangeZin{
-        width: 100%;
-    }
-
-}
-
-@media (max-width:500px)
-{
-    #geg{
-        padding-right: 0;
-        margin-right: 0;
-        width: 65%;
-        font-size: 13px;
-    }
-    
-    #content{
-        min-height: 200px;
-    }
-    .LangeZin{
-        display: none;
-        width: 100%;
-        overflow: hidden;
-        height: 1px;
-    }
-    .KorteZin{
-        visibility: visible;
-    }
-
-    #Formulier{float: left;
-               width: 100%;
-               height: auto;
-               min-width:200px;
-    }
-    .nieuwsbrief{
-        padding:0;
-        margin:0;
-        margin-bottom: 20px;
-        height: auto;
-        width: 100%;
-    }
-    .nieuwsbrief input.form-control{
-        width: 100%;
-        vertical-align: top;
-    }
-
-    .nieuwsbrief textarea.form-control{
-        width: 100%;
-        vertical-align: top;
-    }
-
-    .nieuwsbrief label.checkbox{
-        text-align: left;
-        width: 100%;
-        vertical-align: top;
-    }
-}
-
-
-/******************************************************************************/
-
-
-
 /* --- opmaak full callender --- */
 #wrap {
     width: 100%;
     margin: 0 auto;
     background: #eee;
-
 }
-
 #external-events {
     float: left;
     width: 20%;
@@ -513,29 +287,24 @@ main iframe{
     background: #eee;
     text-align: left;
 }
-
 #external-events h4 {
     font-size: 16px;
     margin-top: 0;
     padding-top: 1em;
 }
-
 #external-events .fc-event {
     margin: 10px 0;
     cursor: pointer;
 }
-
 #external-events p {
     margin: 1.5em 0;
     font-size: 11px;
     color: #666;
 }
-
 #external-events p input {
     margin: 0;
     vertical-align: middle;
 }
-
 #calendar {
     float: right;
     width: 80%;
@@ -543,71 +312,26 @@ main iframe{
     min-height: 400px;
     display: block;
 }
-
 #datepicker{
     display: block;
 }
 #verwijder label{
-        font-weight: normal;
-        font-size: 10px;
-    }
-@media (max-width:1250px) {
-    #calendar {
-         float: right;
-         width: 80%
-    }
-    
+    font-weight: normal;
+    font-size: 10px;
 }
-
-@media (max-width:500px) {
-    #calendar {
-         width: 100%;
-    }
-    
-    #wrap{
-        width: 100%;
-    }
-    #datepicker input, #datepicker label{
-        display: block;
-    }
-    
-    #external-events{
-        width: 100%;
-        height: auto;
-    }
-    
-    #verwijder{
-        float:left;
-        vertical-align: bottom;
-    }
-    
-    #verwijder form, #external-events input{
-        display: block;
-        float: left;
-    }
-    
-    .element{
-        width:30%;
-        display: block;
-        float:left;
-        margin-right: 10%;
-    }
-}
-
-
+/******************************************************************************/
 /* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
 /* Carousel base class */
-.carousel {
-    width: auto;
-    height: 32.25em;
-    margin-bottom: 3.75em;
+#myCarousel{
+    margin: 0 auto 1em auto;
+    border: 5px solid #014B72;
+    width: 612px;
+    height: 461px;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
     z-index: 10;
 }
-
 /* Declare heights because of positioning of img element */
 .carousel .item {
     height: 32.25em;
@@ -618,64 +342,192 @@ main iframe{
     top: 0;
     left: 0;
     max-width: 100%;
-    height: 100%;}
+    height: 100%;
+}
 /******************************************************************************/
-
 /* alles met de footer */
-footer{color: #FFF;
-        background-color: #014B72; /* achtergrond kleur*/
-        /*background-color: #015965; /* donker kleur */
-        /*background-color: #03899C; */ /* licht kleur */
-        padding:0.5em 0 0 1em;
-        //border: solid 0.06em;
-        //border-color: #03899C;
-        border: none;
-        width: 100%;
-        margin-bottom: 0.5em;
-}
-
-@media screen and (max-width: 768px){
-    footer{
-        font-size: 12px;
-    }
+footer{
+    color: #FFF;
+    background-color: #014B72; /* achtergrond kleur*/
+    padding:0.5em 0 0 1em;
+    border: none;
+    width: 100%;
+    margin-bottom: 0.5em;
 }
 /******************************************************************************/
-
-/* --- OPMAAK FORUM --- */
-.panel-primary>.panel-heading{
-    background-color: #428bca; /*donkerblauw*/
-}
-
-/******************************************************************************/
-
 /* Maarten  */
-@media (min-width: 768px){.navbar-collapse {
-                              padding-left: 0px;}}
 .navbar-collapse {
-    padding-left: 0px;}
+    padding-left: 0px;
+}
 #navigation {
     margin: 0;
     padding-left: 0px;
     width: 100%;
 }
-@media (max-width: 768px) {#video{display:none;}
+.panel-body.panel-list-group{
+    padding:0;
+}
+.panel-body.panel-list-group .list-group {
+    margin-bottom:0;
+}
+.panel-body.panel-list-group .list-group .list-group-item:first-child{
+    border-radius:0;
+}
+/* --- OPMAAK FORUM --- */
+.panel-primary>.panel-heading{
+    background-color: #428bca; /*donkerblauw*/
+}
+/******************************************************************************/
+/**** MEDIA QUERRIES ****/
+@media screen and(max-width:500px){
+    /* CONTACT */
+    .contact{
+        padding:1em;
+        margin: 0;
+        width: 100%;
+    }
+    #Map{
+        width: 100%;
+        height:31.25em;
+        margin:0;
+        margin-bottom: 2em;
+        border: 0.1em solid black;
+        padding:0;
+        float: left;
+    }
+    #right_content{
+        float: left;
+        margin:0;
+        background-color: #FFFFFF;
+        border:1px solid black;
+        padding:10px;
+        height:31.25em;
+        background:#FFB673;
+        width: 100%;
+    }
+    /*******************************************/
+
+    /* FULLCALENDER */
+    #calendar {
+        width: 100%;
+    }
+
+    #wrap{
+        width: 100%;
+    }
+    #datepicker input, #datepicker label{
+        display: block;
+    }
+
+    #external-events{
+        width: 100%;
+        height: auto;
+    }
+
+    #verwijder{
+        float:left;
+        vertical-align: bottom;
+    }
+
+    #verwijder form, #external-events input{
+        display: block;
+        float: left;
+    }
+
+    .element{
+        width:30%;
+        display: block;
+        float:left;
+        margin-right: 10%;
+    }
+    /***************************************/
+}
+@media screen and(min-width:767px){
+    /* NAVIGATION */
+    textarea.form-control{
+        width: 100%;
+    }
+    input.form-control{
+        width: 100%;
+    }
+    form{
+        vertical-align:top;
+    }
+    .navbar-collapse {
+        padding-left: 0px;
+    }
+    /***************************************/
+    /* CONTACT */
+    textarea.form-control{
+        width: 100%;
+    }
+    input.form-control{
+        width: 100%;
+    }
+    /*************************************/
+    /* VRIJWILLIGERS */
+    .jumbotron h1{
+        font-size: 36px;
+    }
+    .hoofding{
+        font-size: 36px;
+    }
+    /*********************/
 }
 
-/* stylen van panel forum */
+@media screen and(max-width: 768px){
+    /* header*/
+    #geg {
+        float: left;
+        width: 100%;
+        height: auto;
+    }
+    /*******************/
 
-.panel-body.panel-list-group
-{padding:0;}
-.panel-body.panel-list-group .list-group {margin-bottom:0;}
-.panel-body.panel-list-group .list-group .list-group-item:first-child{
-    border-radius:0;}
+    /* NAVIGATION */
+    .nav li{
+        padding-left: 15px;
+    }
+    /*****************************/
 
+    /* CONTENT */
+    #video{
+        display:none;
+    }
+    /*********************************/
 
-/****************/
+    /* CONTACT */
+    #right_content {
+        float: left;
+        width: 100%;
+        height: auto;
+    }
 
+    #Map{
+        float: left;
+        width: 100%;
+        height: 18.75em;
+    }
+    /*******************************/
+
+    /* FOOTER */
+    footer{
+        font-size: 12px;
+    }
+    /*******************************/
+}
+
+@media (max-width:1250px){
+    /* CALENDAR */
+    #calendar {
+        float: right;
+        width: 80%;
+    }
+    /***************/
+}
+/******************************************************************************/
 /* Clearfix  */
-
-
-/**
+/*
 * For modern browsers
 * 1. The space content is one way to avoid an Opera bug when the
 * contenteditable attribute is included anywhere else in the document.
@@ -693,10 +545,12 @@ footer{color: #FFF;
 .cf:after {
     clear: both;
 }
-/**
+
+/*
 * For IE 6/7 only
 * Include this rule to trigger hasLayout and contain floats.
 */
 .cf {
     *zoom: 1;
 }
+
