@@ -3,8 +3,8 @@
 @section('content')
 <div class="container" id="content">
     <div class="jumbotron">
-        {{ Form::model(array('url'=>'user/create', 'class'=>'form-signup')) }}
-        <h2 class="form-signup-heading">Registreren</h2>
+        {{ Form::open(array('url'=>'user/change', 'class'=>'form-signup')) }}
+        <h2 class="form-signup-heading">Veranderingen aanbrengen aan je profielgegevens</h2>
         <ul>
             @foreach($errors->all() as $error)
             <li>{{ $error }}</li>
@@ -36,7 +36,7 @@
         {{ Form::textarea('message', null, array('class'=>'input-block-level', 'placeholder'=> 'Iets extra toe te voegen?')) }}<br><br>
 
 
-        {{ Form::submit('Registreren', array('class'=>'btn btn-primary'))}}
+        {{ Form::submit('Aanpassen', array('class'=>'btn btn-primary'))}}
         {{ Form::close() }}
     </div>
 </div>

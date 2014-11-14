@@ -77,19 +77,14 @@ Route::get('PDF', function() {
     $pdf->render();
     return PDF::load($pdf, 'A4', 'portrait')->show();
 });
-//dashboard
-//--------------------------------
-//gegevens
-Route::post('dashboard/change', 'UserController@update');
+
+Route::get('user/{id}', 'UserController@getDashboard');
 
 //avatar 
 Route::get('upload', function() {
   return View::make('user.dashboard');
 });
 Route::post('apply/upload', 'ApplyController@upload');
-
-
-Route::get('/', array('uses' => 'ForumController@index', 'as' => 'forum'));
 
 Route::group(array('prefix' => '/forum'), function()
 {

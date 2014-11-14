@@ -3,6 +3,7 @@
 class ApplyController extends BaseController {
 
     public function upload() {
+        Auth::user();
         // getting all of the post data
         $file = array('image' => Input::file('image'));
         // setting up rules
@@ -17,7 +18,7 @@ class ApplyController extends BaseController {
             if (Input::file('image')->isValid()) {
                 $destinationPath = 'uploads'; // upload path
                 $extension = Input::file('image')->getClientOriginalExtension(); // getting image extension
-                $fileName = rand(11111, 99999) . '.' . $extension; // renameing image
+                $fileName = Auth::user()->id. '.' . $extension; // renameing image
                 Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
                 // sending back with message
                 Session::flash('success', 'Uw avatar is aangepast');
@@ -27,6 +28,7 @@ class ApplyController extends BaseController {
                 Session::flash('error', 'Het bestand is ongeldig');
                 return Redirect::to('user/dashboard');
             }
+          
         }
     }
 

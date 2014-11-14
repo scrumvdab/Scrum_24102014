@@ -50,18 +50,19 @@ class UserController extends BaseController {
         }
     }
 
-    public function getDashboard() {
-        $users = User::all();
-        return View::make('user.dashboard')->with('users', $users);
-    }
-
     public function getLogout() {
         Auth::logout();
         return Redirect::to('user/login')->with('message', 'Je bent nu afgemeld!');
     }
 
-    public function update() {
-        return Redirect::to('user/dashboard');
+    public function getDashboard() {
+        Auth::user();
+        return View::make('user.dashboard');
+    }
+
+    public function getUpdate() {
+        Auth::user();
+        return View::make('user.dashboard_edit');
     }
 
 }
