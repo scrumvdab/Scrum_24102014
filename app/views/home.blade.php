@@ -24,8 +24,8 @@
                     </div>
                     @endfor
                 </div>
-                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><img src="images/nav_arrow_L.png" alt="vorige foto" class="nav_icon_L" /></a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><img src="images/nav_arrow_R.png" alt="volgende foto" class="nav_icon_R" /></a>
             </div>
         </div> 
     </figure>
@@ -83,7 +83,11 @@
             <p>GAAT NAAR DE WERKING VAN WVA VZW</p>
             <br/>
             <p>Word zeker ook vriend van WVA vzw op <a href="https://www.facebook.com/events/685580554852792/?fref=ts" target="_blank">Facebook!</a> Daar kun je op de hoogte blijven van al onze activiteiten!</p>
-        
+            <p>Met steun van het <a href="http://www.vaph.be/vlafo/view/nl" target="_blank">Vlaams Agentschap voor personen met een beperking</a> en <a href="http://www.west-vlaanderen.be/Paginas/default.aspx" target="_blank">Provincie West-Vlaanderen.</a></p>
+            <div class="float_center">
+                <figure class="logo"><a href="http://www.vaph.be/vlafo/view/nl" target="_blank"><img src="images/vaph.jpg" alt="VAPH"/></a></figure>
+                <figure class="logo"><a href="http://www.west-vlaanderen.be/Paginas/default.aspx" target="_blank"><img src="images/wvl.jpg" alt="wvl"/></a></figure>
+            </div>
         </div>
     </main>
 </div>

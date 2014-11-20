@@ -11,20 +11,27 @@
                 @if(Auth::check())
                 <a href="{{ URL::route('forum-get-new-thread', $category->id) }}" class="btn btn-default">Voeg onderwerp toe</a>
                 @endif
+
                 <div class="panel panel-primary">
                     <div class="panel-heading">
+
                         @if(Auth::check() && Auth::user()->isAdmin())
                         <div class="clearfix">
-                            <h3 class="panel-title pull-left">{{ $category->title }}</h3>
+                            <h4 class="panel-title pull-left">{{ $category->title }}</h4>
                             <a href="{{ URL::route('forum-get-new-thread', $category->id) }}" class="btn btn-success btn-xs pull-right">Nieuw onderwerp</a>
                             <a id="{{ $category->id }}" href="#" data-toggle="modal" data-target="#category_delete" class="btn btn-danger btn-xs pull-right delete_category">Verwijder</a>
                         </div>
                         @else
+
                         <div class="clearfix">
                             <h3 class="panel-title pull-left">{{ $category->title }}</h3>
+                            @if(Auth::user())
                             <a href="{{ URL::route('forum-get-new-thread', $category->id) }}" class="btn btn-success btn-xs pull-right">Nieuw onderwerp</a>
+                            @endif
                         </div>
                         @endif
+
+
                     </div>
                     <div class="panel-body panel-list-group">
                         <div class="list-group">

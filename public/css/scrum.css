@@ -137,6 +137,16 @@ label{
 .hoofding{
     font-size: 36px;
 }
+
+.logo{
+    float:left;
+    padding:0;
+    margin: 1em 50px 1em 1em;
+}
+
+.float_center{
+    margin-left: 20%;
+}
 /******************************************************************************/
 /* --- contact --- */
 .contact{
@@ -361,6 +371,27 @@ main iframe{
     max-width: 100%;
     height: 100%;
 }
+
+.nav_icon_L{
+    position:relative;
+    top:225px;
+    z-index:5;
+    display:inline-block;
+    width:30px;
+    height:30px;
+    margin-top:-15px;
+}
+
+.nav_icon_R{
+    position:relative;
+    top:225px;
+    z-index:5;
+    display:inline-block;
+    width:30px;
+    height:30px;
+    margin-top:-15px;
+}
+
 /******************************************************************************/
 /* INVULFORMULIER USER */
 #login form label{
@@ -412,6 +443,15 @@ footer.container{
 /******************************************************************************/
 /**** MEDIA QUERRIES ****/
 @media (max-width:500px) {
+    /* NAVBAR */
+    #buttons li {
+        width: 100%;
+    }
+
+    .navbar-nav{
+        margin: 0; 
+    }
+    /**************************************************************************/
     /* CONTACT */
     .contact{
         padding:1em;
@@ -474,6 +514,14 @@ footer.container{
     /***************************************/
 }
 @media(max-width: 768px){
+    /* NAVBAR */
+    #buttons li {
+        width: 100%;
+    }
+    .navbar-nav{
+        margin: 0; 
+    }
+    /**************************************************************************/
     /* header*/
     #geg {
         float: left;
@@ -549,6 +597,7 @@ footer.container{
     .navbar-collapse {
         padding-left: 0px;
     }
+    /**************************************************************************/
     /***************************************/
     /* CONTACT */
     textarea.form-control{
@@ -581,6 +630,8 @@ footer.container{
         font-size: 16px;
         font-weight: normal;
     }
+
+
     /**********************/
 }
 @media(max-width:1250px){

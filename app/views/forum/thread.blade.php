@@ -10,10 +10,13 @@
                         <li><a href="{{ URL::route('forum-category', $thread->category_id) }}">{{ $thread->category->title }}</a></li>
                         <li class="active">{{ $thread->title }}</li>
                     </ol>
+                    @if(Auth::user())
                     @if(Auth::user()->isAdmin() || Auth::user()->id == $thread->author_id)
                     
                     <a href="{{ URL::route('forum-delete-thread', $thread->id) }}" class="btn btn-danger pull-right">Verwijder</a>
                     @endif
+                    @endif
+                   
                 </div>
                 <div class="well">
                     <h2>{{ $thread->title }}</h2>
