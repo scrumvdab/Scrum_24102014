@@ -50,8 +50,8 @@
             <figure id="logo_wtv">
                 <a href="http://www.wtv.be/" target="new"> <img src="images/logo_WTV.png" alt="logo_wtv"/> </a>
             </figure>
-            <iframe width="420" height="315" src="//www.youtube.com/embed/AstH9OK3LkE" frameborder="0" allowfullscreen></iframe>
-            <iframe width="420" height="315" src="//www.youtube.com/embed/Wspa8NS9wiA" frameborder="0" allowfullscreen></iframe>
+            <iframe class="video" width="420" height="315" src="//www.youtube.com/embed/AstH9OK3LkE" frameborder="0" allowfullscreen></iframe>
+            <iframe class="video" width="420" height="315" src="//www.youtube.com/embed/Wspa8NS9wiA" frameborder="0" allowfullscreen></iframe>
             <br/>
             <br/>
             <p>De Werkgroep Vorming en Aktie is erkend als vrijetijdsorganisatie.</p>

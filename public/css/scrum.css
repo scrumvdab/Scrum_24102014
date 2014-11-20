@@ -169,6 +169,15 @@ label{
     padding:0;
     float: left;
 }
+#left_content{
+    float: left;
+    background-color: #FFFFFF;
+    border:1px solid black;
+    padding:10px;
+    background:#FFB673; /* kleur form */
+    width: 49.5%;
+}
+
 #right_content{
     float: right;
     background-color: #FFFFFF;
@@ -467,8 +476,18 @@ footer.container{
         padding:0;
         float: left;
     }
-    #right_content{
+    #left_content{
         float: left;
+        margin:0;
+       // background-color: #FFFFFF;
+        border:1px solid black;
+        padding:10px;
+        background-color:#FFB673;
+        width: 100%;
+        overflow: hidden;
+    }
+    #right_content{
+        float: right;
         margin:0;
         background-color: #FFFFFF;
         border:1px solid black;
@@ -550,7 +569,7 @@ footer.container{
     }
     /*****************************/
     /* CONTENT */
-    #video{
+    .video{
         display:none;
     }
     .content_home{
@@ -562,6 +581,11 @@ footer.container{
     /*********************************/
     /* CONTACT */
     #right_content {
+        float: left;
+        width: 100%;
+        height: auto;
+    }
+    #left_content {
         float: left;
         width: 100%;
         height: auto;
