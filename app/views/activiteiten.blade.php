@@ -45,12 +45,21 @@
 
                     </form>
                 </div>
-            </main>
-
+            
+            <div id="activiteiten">
+                @foreach($activities as $activity)
+                <h2> {{ $activity->id }} {{ $activity->title }} </h2>
+                <h3> {{ $activity->body }} </h3>
+                <p>Gemaakt op: {{ $activity->created_at }} </p>
+                <p>Laatst gewijzigd op: {{ $activity->created_at }} </p>
+                @endforeach
+            </div>
 
     </main>
+            
     <main class="pull-left">
         <h1 class="hoofding">Hieronder vind u info over de activiteiten:</h1>
+        <!--
         <div id='wrap' class="cf">
             <div id='external-events' class="cf">
                 <h4>Verplaatsbare evenementen</h4>
@@ -66,16 +75,18 @@
             </div>
             <div id='calendar'>
             </div>
+        
         </div>
         @if(Auth::user())
         @if(Auth::user()->isAdmin())
     <iframe src="https://www.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=passchyn.maarten%40gmail.com&amp;color=%232952A3&amp;src=en.be%23holiday%40group.v.calendar.google.com&amp;color=%236B3304&amp;ctz=Europe%2FBrussels" style=" border-width:0 " width="100%" height="600px" frameborder="0" scrolling="no"></iframe></div>
 @endif
 @endif
+        -->
 </main>
 </div>
-
-<?php
+<!--
+< ?php
 $event1_title = "event1";
 $event1_start = "2014-11-22T12:30:00";
 $event1_end = "2014-11-22T16:30:00";
@@ -83,7 +94,7 @@ $event2_title = "event2";
 $event2_start = "2014-11-26T12:30:00";
 $event2_end = "2014-11-26T16:30:00";
 ?>
-
+-->
 
 <script type="text/javascript">
     $(function() {
@@ -124,7 +135,7 @@ $event2_end = "2014-11-26T16:30:00";
             }
     });
     });</script>
-
+<!--
 <script type="text/javascript">
             $(document).ready(function() {
     /* initialize the external events
@@ -155,8 +166,8 @@ $event2_end = "2014-11-26T16:30:00";
             $('#calendar').fullCalendar({
     // events
     events:[
-<?php echo "{ title: " . json_encode($event1_title) . ", start: " . json_encode($event1_start) . ", end: " . json_encode($event1_end) . " }," ?>
-<?php echo "{ title: " . json_encode($event2_title) . ", start: " . json_encode($event2_start) . ", end: " . json_encode($event2_end) . " }," ?>
+< ?php echo "{ title: " . json_encode($event1_title) . ", start: " . json_encode($event1_start) . ", end: " . json_encode($event1_end) . " }," ?>
+< ?php echo "{ title: " . json_encode($event2_title) . ", start: " . json_encode($event2_start) . ", end: " . json_encode($event2_end) . " }," ?>
 
     {
     url: 'http://www.google.com/calendar/feeds/passchyn.maarten%40gmail.com/public/basic',
@@ -196,15 +207,15 @@ $event2_end = "2014-11-26T16:30:00";
     });
     });
 </script>
-
-{{ HTML::style('bootstrap/css/jquery-ui.css') }}
-{{ HTML::style('fullcalendar/fullcalendar.css') }}
-{{ HTML::script('http://code.jquery.com/jquery-1.10.2.js') }}
-{{ HTML::script('http://code.jquery.com/ui/1.11.1/jquery-ui.js') }}
+-->
+<!--{{ HTML::style('fullcalendar/fullcalendar.css') }}
 {{ HTML::script('fullcalendar/lib/moment.min.js') }}
 {{ HTML::script('fullcalendar/fullcalendar.js') }}
-{{ HTML::script('lib/jquery.min.js') }}
 {{ HTML::script('fullcalendar/gcal.js') }}
-
+-->
+{{ HTML::style('bootstrap/css/jquery-ui.css') }}
+{{ HTML::script('http://code.jquery.com/jquery-1.10.2.js') }}
+{{ HTML::script('http://code.jquery.com/ui/1.11.1/jquery-ui.js') }}
+{{ HTML::script('lib/jquery.min.js') }}
 {{ HTML::script('bootstrap/js/bootstrap.min.js') }}
 @stop

@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration {
             $table->string('email', 100)->unique();
             $table->string('phone', 100);
             $table->text('message')->nullable();
-            $table->boolean('news');
+            $table->boolean('news')->default(true);
             $table->boolean('news_extra');
             $table->string('banknr', 100);
             $table->timestamps();

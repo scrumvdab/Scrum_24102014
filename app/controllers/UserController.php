@@ -27,6 +27,7 @@ class UserController extends BaseController {
             $user->password = Hash::make(Input::get('password'));
             $user->phone = Input::get('phone');
             $user->message = Input::get('message');
+            $user->banknr = Input::get('banknr');
             $user->save();
 
             return Redirect::to('user/login')->with('message', 'Je bent succesvol geregistreerd!');
@@ -56,13 +57,67 @@ class UserController extends BaseController {
     }
 
     public function getDashboard() {
-        Auth::user();
-        return View::make('user.dashboard');
+        $user = Auth::user();
+        return View::make('user.dashboard')->with('user', $user);
     }
 
-    public function getUpdate() {
-        Auth::user();
-        return View::make('user.dashboard_edit');
+    public function getEdit() {
+        $user = Auth::user();
+        return View::make('user.dashboard_edit')->with('user', $user);
+    }
+
+    public function putUpdate() {
+        $validation = Validator::make(Input::all(), array(
+                    'firstname' => 'required|alpha|min:2',
+                    'lastname' => 'required|alpha|min:2',
+                    'username' => 'required|alpha',
+                    'email' => 'required|email',
+                    'password' => 'required|alpha_num|between:6,12|confirmed',
+                    'password_confirmation' => 'required|alpha_num|between:6,12'
+                        )
+        ); //close validation
+        //If validation fail send back the Input with errors
+        if ($validation->fails()) {
+            //withInput keep the users info
+            return Redirect::back()->withInput()->withErrors($validation->messages());
+        } else {
+            // validation has passed, update user in DB       
+            $user = Auth::user();
+            $user->firstname = Input::get('firstname');
+            $user->lastname = Input::get('lastname');
+            $user->username = Input::get('username');
+            $user->email = Input::get('email');
+            $user->adress = Input::get('adress');
+            $user->zip = Input::get('zip');
+            $user->city = Input::get('city');
+            $user->password = Hash::make(Input::get('password'));
+            $user->phone = Input::get('phone');
+            $user->banknr = Input::get('banknr');
+            $user->save();
+
+            return Redirect::to('user/dashboard')->with('message', 'Succesvol aangepast!');
+        }
+    }
+
+    public function putNews() {
+        $validation = Validator::make(Input::all(), array(
+                    'news' => 'boolean',
+                    'news_extra' => 'boolean'
+                        )
+        ); //close validation
+        //If validation fail send back the Input with errors
+        if ($validation->fails()) {
+            //withInput keep the users info
+            return Redirect::back()->withInput()->withErrors($validation->messages());
+        } else {
+            // validation has passed, update user in DB       
+            $user = Auth::user();
+            $user->news = Input::get('news');
+            $user->news_extra = Input::get('news_extra');
+            $user->save();
+
+            return Redirect::to('user/dashboard')->with('message', 'Succesvol aangepast!');
+        }
     }
 
 }

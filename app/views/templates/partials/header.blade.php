@@ -9,7 +9,9 @@
         {{ HTML::style("css/scrum.css") }}
         {{ HTML::style("bootstrap/js/bootstrap.min.js") }}
         {{ HTML::style("http://fonts.googleapis.com/css?family=Tangerine") }}
+        {{ HTML::style ("css/livepreview-demo.css") }}
         {{ HTML::script("http://code.jquery.com/jquery.js") }}
+        {{ HTML::script("js/jquery-live-preview.js") }}
     </head>
     <body>
         <div id="wrapper">

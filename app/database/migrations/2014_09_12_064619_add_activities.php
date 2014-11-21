@@ -14,6 +14,8 @@ class AddActivities extends Migration {
         DB::table('activities')->insert(array(
             'title' => 'Artikel 1',
             'body' => 'Dit is een test, blablablabla',
+            'date' => '2014/11/12',
+            'time' => '11:00',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
@@ -21,6 +23,8 @@ class AddActivities extends Migration {
         DB::table('activities')->insert(array(
             'title' => 'Artikel 2',
             'body' => 'Dit is ook een test, woooooooooooooop',
+            'date' => '2014/11/12',
+            'time' => '12:00',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
@@ -28,6 +32,8 @@ class AddActivities extends Migration {
         DB::table('activities')->insert(array(
             'title' => 'Artikel 3',
             'body' => 'Dit is nog een test, mimimimimimimimimimimimimi',
+            'date' => '2014/11/12',
+            'time' => '12:30',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));

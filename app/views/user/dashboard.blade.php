@@ -12,11 +12,11 @@
             <p>E-mail: {{ $email = Auth::user()->email; }}</p>
             <p>Telefoonnr: {{ $phone = Auth::user()->phone; }}</p>
             <p>Rekeningnr: {{ $banknr = Auth::user()->banknr; }}</p>
-            {{ Form::open(array('url'=>'user/update','method'=>'get')) }}
+            {{ Form::open(array('url'=>'user/edit', 'method'=>'get')) }}
             {{ Form::submit('Gegevens Aanpassen', array('class'=>'send-btn')) }}
             {{ Form::close() }}
         </div>
-        <div style="float:right; margin-top:-330px" id="Avatar">
+        <div style="float:right; margin-top:-335px" id="Avatar">
             <h2>Avatar</h2>
             <div class="text-content">
                 <div class="span7 offset1">
@@ -34,24 +34,34 @@
                             <p class="errors">{{ Session::get('error') }}</p>
                             @endif
                         </div>
+                        <p style="font-size:14px;">Afbeelding enkel van het type .jpg en max 10MB groot!</p> 
                     </div>
                     <div id="success"> </div>
                     {{ Form::submit('Verzenden', array('class'=>'send-btn')) }}
                     {{ Form::close() }}
-                </div> 
-                <img style="float:right;" src="../uploads/{{ $id = Auth::user()->id }}.jpg" alt="avatar"/>
+                </div>
+                <img id="avatar" style="width: 100px; height: 100px;" src="../uploads/{{ $id = Auth::user()->id }}.jpg " alt="avatar" title="avatar"/>
             </div>
         </div>
         <h2>Nieuwsbrief</h2>
         <div id="Nieuwsbrief">
-            {{ Form::open(array('method' => 'post')) }}
-            {{ Form::label('nieuwsbrief', 'Hoe wilt u uw nieuwsbrief ontvangen?') }}
-            {{ Form::radio('nieuwsbrief', 'news', true) }} E-mail
-            {{ Form::radio('nieuwsbrief', 'news_extra') }} Post
+            {{ Form::open(array('url'=>'user/news', 'method' => 'put')) }}
+            {{ Form::label('news', 'Hoe wilt u uw nieuwsbrief ontvangen?') }}<br>
+            {{ Form::checkbox('news', Input::old('news', $user->news)) }} E-mail
+            {{ Form::checkbox('news_extra', Input::old('news_extra', $user->news_extra)) }} Post <br>
+            {{ Form::submit('Verzenden', array('class'=>'send-btn')) }}
             {{ Form::close() }}
         </div>
     </div>
 </div>
+
+<script>
+    $("img").error(function () {
+        $(this).hide();
+        // or $(this).css({visibility:"hidden"}); 
+    });
+</script>
+
 {{ HTML::script('http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js') }}
 {{ HTML::script('bootstrap/js/bootstrap.min.js') }}
 @stop
