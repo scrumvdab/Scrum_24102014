@@ -5,39 +5,37 @@
 
 <div class="jumbotron container cf" id="content">
     <main>
-        {{ Form::open(array('url'=>'add', 'method'=>'get')) }}
-        {{ Form::submit('Gegevens Aanpassen', array('class'=>'send-btn')) }}
-        {{ Form::close() }}
-
         <h1 class="hoofding">Hieronder vind u info over de activiteiten:</h1>
         <div id="datepicker">
             <label for="from">Van</label>
             <input type="text" id="from" name="from">
+            <label for="to">tot</label>
+            <input type="text" id="to" name="to">
         </div>
-        <!-- <div id='wrap' class="cf">
-             <div id='external-events' class="cf">
-                 <h4>Verplaatsbare evenementen</h4>
-                 <div class='fc-event'>Evenement 1</div>
-                 <div class='fc-event'>Evenement 2</div>
-                 <div class='fc-event'>Evenement 3</div>
-                 <div class='fc-event'>Evenement 4</div>
-                 <div class='fc-event'>Evenement 5</div>
-                 <p>
-                     <input type='checkbox' id='drop-remove' />
-                     <label for='drop-remove'>verwijder na verslepen</label>
-                 </p>
-             </div>
-             <div id='calendar'> </div>
-         </div>
-        -->
-        <div id="activiteiten">
-            @foreach($activities as $activity)
-            <h2> {{ $activity->id }} {{ $activity->title }} </h2>
-            <h3> {{ $activity->body }} </h3>
-            <p>Gemaakt op: {{ $activity->created_at }} </p>
-            <p>Laatst gewijzigd op: {{ $activity->created_at }} </p>
-            @endforeach
+       <!-- <div id='wrap' class="cf">
+            <div id='external-events' class="cf">
+                <h4>Verplaatsbare evenementen</h4>
+                <div class='fc-event'>Evenement 1</div>
+                <div class='fc-event'>Evenement 2</div>
+                <div class='fc-event'>Evenement 3</div>
+                <div class='fc-event'>Evenement 4</div>
+                <div class='fc-event'>Evenement 5</div>
+                <p>
+                    <input type='checkbox' id='drop-remove' />
+                    <label for='drop-remove'>verwijder na verslepen</label>
+                </p>
+            </div>
+            <div id='calendar'> </div>
         </div>
+     -->
+     <div id="activiteiten">
+         @foreach($activities as $activity)
+         <h2> {{ $activity->id }} {{ $activity->title }} </h2>
+         <h3> {{ $activity->body }} </h3>
+         <p>Gemaakt op: {{ $activity->created_at }} </p>
+         <p>Laatst gewijzigd op: {{ $activity->created_at }} </p>
+         @endforeach
+     </div>
     </main>
 </div>
 <script type="text/javascript">

@@ -109,3 +109,5 @@ Route::group(array('before' => 'auth'), function() {
     Route::get('/users/logout', array('uses' => 'UserController@getLogout', 'as' => 'getLogout'));
     Route::put('users/update', array('uses' => 'UserController@putUpdate', 'as' => 'putUpdate'));
 });
+
+Route::get('add', 'ActiviteitenController@add');
