@@ -695,3 +695,13 @@ footer.container{
     *zoom: 1;
 }
 
+/*** overwrite bootstrap panel ****/
+
+.panel panel primary, .panel-body.panel-list-group {border-radius: 4px 4px 0 0}
+.list-group-item {margin-bottom: -1px;}
+
+
+.list-group-item:last-child {
+border-bottom: 0;
+border-bottom-right-radius: 0px;
+border-bottom-left-radius: 0px;}

@@ -15,6 +15,7 @@ stap 4: maak migration files aan
 => ../htdocs/project laravel/php artisan migrate:make create_forum_categories_table
 => ../htdocs/project laravel/php artisan migrate:make create_forum_threads_table
 => ../htdocs/project laravel/php artisan migrate:make create_forum_comments_table
+=> ../htdocs/project laravel/php artisan migrate:make create_forum_replies_table
 
 stap 5: maak de tabellen en hun attributen in de database aan volgens de migrations files
 

@@ -1,5 +1,11 @@
 $(document).ready(function()
-{
+{   
+    $("#new_reply").click(function()
+    {
+        $("#reply_ Form").show();
+    });
+    
+    
     $("#form_submit").click(function()
     {
         $("#target_form").submit();
@@ -24,7 +30,7 @@ $(document).ready(function()
 
     $(".delete_category").click(function(event)
     {
-        $("#btn_delete_category").prop('href', 'forum/category/' + event.target.id + '/delete');
+        $("#btn_delete_category").prop('href', + event.target.id + '/delete');
     });
 });
  

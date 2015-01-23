@@ -107,8 +107,7 @@ return array(
         'Illuminate\View\ViewServiceProvider',
         'Illuminate\Workbench\WorkbenchServiceProvider',
         'Zizaco\Confide\ServiceProvider',
-        'Golonka\BBCode\BBCodeParserServiceProvider', 
-        'Thujohn\Pdf\PdfServiceProvider'
+        'Golonka\BBCode\BBCodeParserServiceProvider'
         
     ),
     /*
@@ -172,8 +171,7 @@ return array(
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View' => 'Illuminate\Support\Facades\View',
         'Confide' => 'Zizaco\Confide\Facade',
-        'BBCode' => 'Golonka\BBCode\Facades\BBCodeParser',
-        'PDF' => 'Thujohn\Pdf\PdfFacade'
+        'BBCode' => 'Golonka\BBCode\Facades\BBCodeParser'
         
     ),
 );
