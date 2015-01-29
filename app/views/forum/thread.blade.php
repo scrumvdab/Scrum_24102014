@@ -30,12 +30,6 @@
                         DB::table('forum_replies_replies')->where('id', $waardeid)->increment('like');
                         break;
                 }
-                ?>
-                <script>
-                    createCookie("like" + getCookie(laag) + getCookie(id), "liked1", "10");
-                    createCookie("dislike" + getCookie(laag) + getCookie(id), "disliked0", "10");
-                </script>
-                <?php
                 /*
                   setcookie($klikcookie, "liked1", time() + 3600);
                   setcookie($gansecookie, "disliked0", time() + 3600);
@@ -112,12 +106,13 @@
                             DB::table('forum_replies_replies')->where('id', $waardeid)->where('like', '>', 0)->decrement('like');
                             break;
                     }
-                    setcookie($gansecookie, "", time() + 3600);
-                    setcookie($klikcookie, "", time() + 3600);
-
-                    unset($_COOKIE[$gansecookie]);
-                    unset($_COOKIE[$klikcookie]);
                     /*
+                      setcookie($gansecookie, "", time() + 3600);
+                      setcookie($klikcookie, "", time() + 3600);
+
+                      unset($_COOKIE[$gansecookie]);
+                      unset($_COOKIE[$klikcookie]);
+
                       setcookie('id', time() - 3600);
                       setcookie('beoordeling', time() - 3600);
                       setcookie('laag', time() - 3600);
@@ -164,7 +159,7 @@
                 </div>
                 <div class="well">
                     <h2>{{ $thread->title }}</h2>
-                    <img style="border:1px red; height:100px; width:100px; float:right;" src="/Scrum/public/uploads/{{$user = DB::table('users')->where('id', $thread->author_id)->first()->id}}.jpg">
+                    <img style="border:1px red; height:100px; width:100px; float:right;" src="../public/uploads/{{$user = DB::table('users')->where('id', $thread->author_id)->first()->id}}.jpg">
                     <br>
                     <h4>Verzonden door: {{ $author }} op {{ $thread->created_at }}</h4>
                     <hr>
@@ -210,18 +205,18 @@
                         <div class="pull-right">
 
                             <h4>Verzonden door: {{ $comment->author->username }} op {{ $comment->created_at }}</h4>
-                            <img style="border:1px red; height:100px; width:100px; float:right;" src="/Scrum/public/uploads/{{$user = DB::table('users')->where('id', $comment->author_id)->first()->id}}.jpg"/>
+                            <img style="border:1px red; height:100px; width:100px; float:right;" src="../public/uploads/{{$user = DB::table('users')->where('id', $comment->author_id)->first()->id}}.jpg"/>
                             <br>
                         </div>
                         <br>
                         <div style="" class="pull-right">
                             <a href="#" >
-                                <img class="like" id="{{ $comment->id }}" data-laag="comment" data-beoordeling="like" style="border:1px red; height:40px; width:40px;" src='/Scrum/public/uploads/like.jpg'>
+                                <img class="like" id="{{ $comment->id }}" data-laag="comment" data-beoordeling="like" style="border:1px red; height:40px; width:40px;" src='../public/uploads/like.jpg'>
                             </a>
                             <br>
                             <h4 class="{{ $comment->id }}">{{ $comment->like }}</h4>
                             <a href="#" >
-                                <img class="dislike" id="{{ $comment->id }}" data-laag="comment" data-beoordeling="dislike" style="border:1px red; height:40px; width:40px;" src="/Scrum/public/uploads/dislike.jpg">
+                                <img class="dislike" id="{{ $comment->id }}" data-laag="comment" data-beoordeling="dislike" style="border:1px red; height:40px; width:40px;" src="../public/uploads/dislike.jpg">
                             </a>
                             <br>
                             <h4 class="{{ $comment->id }}">{{ $comment->dislike }}</h4>
@@ -285,18 +280,18 @@
                             <div class="pull-right">
 
                                 <h4>Verzonden door: {{ $reply->author->username }} op {{ $reply->created_at }}</h4>
-                                <img style="border:1px red; height:100px; width:100px; float:right;" src="/Scrum/public/uploads/{{$user = DB::table('users')->where('id', $reply->author_id)->first()->id}}.jpg"/>
+                                <img style="border:1px red; height:100px; width:100px; float:right;" src="/public/uploads/{{$user = DB::table('users')->where('id', $reply->author_id)->first()->id}}.jpg"/>
                                 <br>
                             </div>
                             <br>
                             <div style="" class="pull-right">
                                 <a href="#">
-                                    <img class="like" data-laag="reply" data-beoordeling="like" id="{{ $reply->id }}" style="border:1px red; height:40px; width:40px;" src='/Scrum/public/uploads/like.jpg'>
+                                    <img class="like" data-laag="reply" data-beoordeling="like" id="{{ $reply->id }}" style="border:1px red; height:40px; width:40px;" src='../public/uploads/like.jpg'>
                                 </a>
                                 <br>
                                 <h4 class="{{ $reply->id }}">{{ $reply->like }}</h4>
                                 <a href="#">
-                                    <img class="dislike" data-laag="reply" data-beoordeling="dislike" id="{{ $reply->id }}" style="border:1px red; height:40px; width:40px;" src="/Scrum/public/uploads/dislike.jpg">
+                                    <img class="dislike" data-laag="reply" data-beoordeling="dislike" id="{{ $reply->id }}" style="border:1px red; height:40px; width:40px;" src="../public/uploads/dislike.jpg">
                                 </a>
                                 <br>
                                 <h4 class="{{ $reply->id }}">{{ $reply->dislike }}</h4>
@@ -364,18 +359,18 @@
                                         }
                                         ?>
                                         <h4>Verzonden door: {{ $replyreply->author->username }} op {{ $replyreply->created_at }}</h4>
-                                        <img style="border:1px red; height:100px; width:100px; float:right;" src="/Scrum/public/uploads/{{$user = DB::table('users')->where('id', $replyreply->author_id)->first()->id}}.jpg"/>
+                                        <img style="border:1px red; height:100px; width:100px; float:right;" src="../public/uploads/{{$user = DB::table('users')->where('id', $replyreply->author_id)->first()->id}}.jpg"/>
                                         <br>
                                     </div>
                                     <br>
                                     <div style="" class="pull-right">
                                         <a href="#">
-                                            <img class="like" data-laag="replyreply" data-beoordeling="like" id="{{ $replyreply->id }}" style="border:1px red; height:40px; width:40px;" src='/Scrum/public/uploads/like.jpg'>
+                                            <img class="like" data-laag="replyreply" data-beoordeling="like" id="{{ $replyreply->id }}" style="border:1px red; height:40px; width:40px;" src='../public/uploads/like.jpg'>
                                         </a>
                                         <br>
                                         <h4 class="{{ $replyreply->id }}">{{ $replyreply->like }}</h4>
                                         <a href="#">
-                                            <img class="dislike" data-laag="replyreply" data-beoordeling="dislike" id="{{ $replyreply->id }}" style="border:1px red; height:40px; width:40px;" src="/Scrum/public/uploads/dislike.jpg">
+                                            <img class="dislike" data-laag="replyreply" data-beoordeling="dislike" id="{{ $replyreply->id }}" style="border:1px red; height:40px; width:40px;" src="../public/uploads/dislike.jpg">
                                         </a>
                                         <br>
                                         <h4 class="{{ $replyreply->id }}">{{ $replyreply->dislike }}</h4>
@@ -511,8 +506,8 @@
                      clearCookie("id");
                      clearCookie("beoordeling");
                      clearCookie("laag");*/
-                    createCookie("dislike" + this.dataset.laag + this.id, "liked0", "10");
-                    createCookie("like" + this.dataset.laag + this.id, "disliked1", "10");
+                    createCookie("dislike" + this.dataset.laag + this.id, "disliked0", "10");
+                    createCookie("like" + this.dataset.laag + this.id, "liked1", "10");
                 }
                 else if (getCookie("like" + this.dataset.laag + this.id) == "zonetverhoogd") {
                     alert("Uw reeds eerder uitgevoerde like wordt ongedaan gemaakt!");

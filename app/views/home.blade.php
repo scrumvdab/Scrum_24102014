@@ -16,9 +16,9 @@
                 </ol>
                 <div class="carousel-inner">   
                     <div class="item active">
-                        <img src="images/foto's WVA/0.jpg" alt="First slide">
+                        <img src="images/foto's WVA/1.jpg" alt="First slide">
                     </div>
-                    @for ($i = 1; $i < 30; $i++)
+                    @for ($i = 0; $i < 30; $i++)
                     <div class="item">
                         <img src="images/foto's WVA/{{ $i }}.jpg" alt="slide">
                     </div>
