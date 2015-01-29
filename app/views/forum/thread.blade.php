@@ -30,12 +30,6 @@
                         DB::table('forum_replies_replies')->where('id', $waardeid)->increment('like');
                         break;
                 }
-                ?>
-                <script>
-                    createCookie("like" + getCookie(laag) + getCookie(id), "liked1", "10");
-                    createCookie("dislike" + getCookie(laag) + getCookie(id), "disliked0", "10");
-                </script>
-                <?php
                 /*
                   setcookie($klikcookie, "liked1", time() + 3600);
                   setcookie($gansecookie, "disliked0", time() + 3600);
@@ -112,12 +106,13 @@
                             DB::table('forum_replies_replies')->where('id', $waardeid)->where('like', '>', 0)->decrement('like');
                             break;
                     }
-                    setcookie($gansecookie, "", time() + 3600);
-                    setcookie($klikcookie, "", time() + 3600);
-
-                    unset($_COOKIE[$gansecookie]);
-                    unset($_COOKIE[$klikcookie]);
                     /*
+                      setcookie($gansecookie, "", time() + 3600);
+                      setcookie($klikcookie, "", time() + 3600);
+
+                      unset($_COOKIE[$gansecookie]);
+                      unset($_COOKIE[$klikcookie]);
+
                       setcookie('id', time() - 3600);
                       setcookie('beoordeling', time() - 3600);
                       setcookie('laag', time() - 3600);
@@ -511,8 +506,8 @@
                      clearCookie("id");
                      clearCookie("beoordeling");
                      clearCookie("laag");*/
-                    createCookie("dislike" + this.dataset.laag + this.id, "liked0", "10");
-                    createCookie("like" + this.dataset.laag + this.id, "disliked1", "10");
+                    createCookie("dislike" + this.dataset.laag + this.id, "disliked0", "10");
+                    createCookie("like" + this.dataset.laag + this.id, "liked1", "10");
                 }
                 else if (getCookie("like" + this.dataset.laag + this.id) == "zonetverhoogd") {
                     alert("Uw reeds eerder uitgevoerde like wordt ongedaan gemaakt!");
